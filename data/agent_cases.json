@@ -1,0 +1,183 @@
+[
+  {
+    "id": "q01",
+    "split": "dev",
+    "question": "How do you convert frequencies into probabilities when building a PMF?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q02",
+    "split": "dev",
+    "question": "In Chapter 4, how is the CDF at a value x calculated from the observed data?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "filter": {
+      "chapter": 4
+    }
+  },
+  {
+    "id": "q03",
+    "split": "dev",
+    "question": "How is the interquartile range (IQR) calculated?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q04",
+    "split": "dev",
+    "question": "What does a PMF associate with each possible value?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q05",
+    "split": "dev",
+    "question": "What should all the probabilities in a normalized PMF add up to?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q06",
+    "split": "dev",
+    "question": "How do the values stored in a Hist differ from those stored in a Pmf?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q07",
+    "split": "dev",
+    "question": "Why plot PMFs to compare two groups with different sample sizes?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q08",
+    "split": "dev",
+    "question": "How do PercentileRank and Percentile differ in what they take as input and return?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q09",
+    "split": "dev",
+    "question": "How can you compute the median with the Percentile method?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q10",
+    "split": "dev",
+    "question": "What makes a distribution empirical in the book's terminology?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q11",
+    "split": "dev",
+    "question": "In Chapter 5, what is the CDF formula for an exponential distribution with parameter lambda?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "filter": {
+      "chapter": 5
+    }
+  },
+  {
+    "id": "q12",
+    "split": "dev",
+    "question": "How does the book characterize an analytic distribution?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q13",
+    "split": "dev",
+    "question": "What shape should the complementary CDF of exponential data show when the y-axis is logarithmic?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q14",
+    "split": "dev",
+    "question": "What slope should the log of the CCDF have for an exponential distribution with rate lambda?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q15",
+    "split": "dev",
+    "question": "How can you use a normal probability plot to check whether positive data fit a lognormal model?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q16",
+    "split": "test",
+    "question": "In Chapter 4, can the same value be selected more than once when sampling with replacement?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "filter": {
+      "chapter": 4
+    }
+  },
+  {
+    "id": "q17",
+    "split": "test",
+    "question": "In a CDF, which three percentile ranks correspond to the quartiles?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q18",
+    "split": "test",
+    "question": "Given a PMF stored as a Pmf object, which method retrieves the probability associated with a particular value?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q19",
+    "split": "test",
+    "question": "How can you generate a random value from a distribution if its inverse CDF is easy to compute?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q20",
+    "split": "test",
+    "question": "In the example on city and town populations, which model fits the remaining 99 percent better after the largest cities are set aside?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q21",
+    "split": "dev",
+    "question": "What is the current population of Hanoi?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "This information is not supported by the Think Stats chapters 3-5 corpus."
+  },
+  {
+    "id": "q22",
+    "split": "dev",
+    "question": "Which laptop brand does the author recommend for running the examples?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "This information is not supported by the Think Stats chapters 3-5 corpus."
+  },
+  {
+    "id": "q23",
+    "split": "test",
+    "question": "What is the weather in Hanoi today?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "This information is not supported by the Think Stats chapters 3-5 corpus."
+  },
+  {
+    "id": "q24",
+    "split": "test",
+    "question": "What GPU model is required to calculate a CDF?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "This information is not supported by the Think Stats chapters 3-5 corpus."
+  }
+]

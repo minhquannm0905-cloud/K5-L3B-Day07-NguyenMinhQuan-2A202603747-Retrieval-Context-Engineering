@@ -1,0 +1,584 @@
+[
+  {
+    "status": "abstain",
+    "answer": "Không đủ bằng chứng để trả lời.",
+    "citations": [],
+    "events": [
+      {
+        "event": "search",
+        "tool": "dense_pgvector_strategy_b",
+        "query": "Chapter 4 sampling with replacement same value",
+        "filter": {
+          "chapter": 4
+        },
+        "results": [
+          {
+            "id": "b-thinkstats2-c3-c5-p56-003",
+            "text": "means that the same value can be chosen more than once; “without replacement” means that once a value is chosen, it is removed from the population.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 56,
+            "metadata": {
+              "chapter": 4
+            },
+            "score": 0.8578801155090332,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p48-001",
+            "text": "48 Chapter 4. Cumulative distribution functions",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 48,
+            "metadata": {
+              "chapter": 4
+            },
+            "score": 0.8531983152985074,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p48-003",
+            "text": "Here’s what that looks like as a function that takes a sequence,sample, and a value,x: def EvalCdf(sample, x): count = 0.0 for value in sample: if value <= x: count += 1 prob = count / len(sample) return prob This function is almost identical toPercentileRank, except that the result is a probability in the range 0–1 rather than a percentile rank in the range 0–100. As an example, suppose we collect a sample with the values [1, 2, 2, 3, 5].",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 48,
+            "metadata": {
+              "chapter": 4
+            },
+            "score": 0.8323028087615967,
+            "strategy": "dense_pgvector_strategy_b"
+          }
+        ],
+        "context": "[b-thinkstats2-c3-c5-p56-003 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 56]\nmeans that the same value can be chosen more than once; “without replacement” means that once a value is chosen, it is removed from the population.\n\n[b-thinkstats2-c3-c5-p48-001 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 48]\n48 Chapter 4. Cumulative distribution functions\n\n[b-thinkstats2-c3-c5-p48-003 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 48]\nHere’s what that looks like as a function that takes a sequence,sample, and a value,x: def EvalCdf(sample, x): count = 0.0 for value in sample: if value <= x: count += 1 prob = count / len(sample) return prob This function is almost identical toPercentileRank, except that the result is a probability in the range 0–1 rather than a percentile rank in the range 0–100. As an example, suppose we collect a sample with the values [1, 2, 2, 3, 5].",
+        "context_ids": [
+          "b-thinkstats2-c3-c5-p56-003",
+          "b-thinkstats2-c3-c5-p48-001",
+          "b-thinkstats2-c3-c5-p48-003"
+        ]
+      },
+      {
+        "event": "model_abstain",
+        "reason": "Chapter 4 contexts do not provide information about sampling with replacement or the possibility of selecting the same value more than once."
+      }
+    ],
+    "query_id": "q16",
+    "elapsed_ms": 7953.1659000203945,
+    "model_usage": [
+      {
+        "prompt_tokens": 287,
+        "prompt_tokens_details": {
+          "cached_tokens": 255
+        },
+        "completion_tokens": 17,
+        "total_tokens": 304
+      },
+      {
+        "prompt_tokens": 651,
+        "prompt_tokens_details": {
+          "cached_tokens": 280
+        },
+        "completion_tokens": 35,
+        "total_tokens": 686
+      }
+    ]
+  },
+  {
+    "status": "answered",
+    "answer": "grounded answer with [b-thinkstats2-c3-c5-p53-002]",
+    "citations": [
+      "b-thinkstats2-c3-c5-p53-002"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "tool": "dense_pgvector_strategy_b",
+        "query": "CDF quartiles percentile ranks",
+        "filter": null,
+        "results": [
+          {
+            "id": "b-thinkstats2-c3-c5-p52-005",
+            "text": "Finally we make and plot the Cdf of the percentile ranks.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 52,
+            "metadata": {
+              "chapter": 4
+            },
+            "score": 0.8895756137877034,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p53-002",
+            "text": "What this figure shows is that 10% of the sample is below the 10th percentile, 20% is below the 20th percentile, and so on, exactly as we should expect. So, regardless of the shape of the CDF, the distribution of percentile ranks is uniform. This property is useful, because it is the basis of a simple and efficient algorithm for generating random numbers with a given CDF.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 53,
+            "metadata": {
+              "chapter": 4
+            },
+            "score": 0.8888703054863049,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p55-004",
+            "text": "4.10 Glossary •percentile rank: The percentage of values in a distribution that are less than or equal to a given value. •percentile: The value associated with a given percentile rank. •cumulative distribution function (CDF): A function that maps from values to their cumulative probabilities. CDF(x) is the fraction of the sample less than or equal tox. •inverse CDF: A function that maps from a cumulative probability,p, to the corresponding value.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 55,
+            "metadata": {
+              "chapter": 4
+            },
+            "score": 0.8858561515808105,
+            "strategy": "dense_pgvector_strategy_b"
+          }
+        ],
+        "context": "[b-thinkstats2-c3-c5-p52-005 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 52]\nFinally we make and plot the Cdf of the percentile ranks.\n\n[b-thinkstats2-c3-c5-p53-002 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 53]\nWhat this figure shows is that 10% of the sample is below the 10th percentile, 20% is below the 20th percentile, and so on, exactly as we should expect. So, regardless of the shape of the CDF, the distribution of percentile ranks is uniform. This property is useful, because it is the basis of a simple and efficient algorithm for generating random numbers with a given CDF.\n\n[b-thinkstats2-c3-c5-p55-004 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 55]\n4.10 Glossary •percentile rank: The percentage of values in a distribution that are less than or equal to a given value. •percentile: The value associated with a given percentile rank. •cumulative distribution function (CDF): A function that maps from values to their cumulative probabilities. CDF(x) is the fraction of the sample less than or equal tox. •inverse CDF: A function that maps from a cumulative probability,p, to the corresponding value.",
+        "context_ids": [
+          "b-thinkstats2-c3-c5-p52-005",
+          "b-thinkstats2-c3-c5-p53-002",
+          "b-thinkstats2-c3-c5-p55-004"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "query_id": "q17",
+    "elapsed_ms": 7722.222600015812,
+    "model_usage": [
+      {
+        "prompt_tokens": 283,
+        "prompt_tokens_details": {
+          "cached_tokens": 276
+        },
+        "completion_tokens": 14,
+        "total_tokens": 297
+      },
+      {
+        "prompt_tokens": 678,
+        "prompt_tokens_details": {
+          "cached_tokens": 276
+        },
+        "completion_tokens": 51,
+        "total_tokens": 729
+      }
+    ]
+  },
+  {
+    "status": "abstain",
+    "answer": "Không đủ bằng chứng để trả lời.",
+    "citations": [],
+    "events": [
+      {
+        "event": "search",
+        "tool": "dense_pgvector_strategy_b",
+        "query": "Pmf object probability retrieval method",
+        "filter": null,
+        "results": [
+          {
+            "id": "b-thinkstats2-c3-c5-p32-001",
+            "text": "32 Chapter 3. Probability mass functions >>> import thinkstats2 >>> pmf = thinkstats2.Pmf([1, 2, 2, 3, 5]) >>> pmf Pmf({1: 0.2, 2: 0.4, 3: 0.2, 5: 0.2}) The Pmf is normalized so total probability is 1. Pmf and Hist objects are similar in many ways; in fact, they inherit many of their methods from a common parent class. For example, the methods ValuesandItemswork the same way for both.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 32,
+            "metadata": {
+              "chapter": 3
+            },
+            "score": 0.8689641434571673,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p33-001",
+            "text": "3.2. Plotting PMFs 33 To renormalize, callNormalize: >>> pmf.Normalize() >>> pmf.Total() 1.0 Pmf objects provide aCopymethod so you can make and modify a copy without affecting the original. My notation in this section might seem inconsistent, but there is a system: I use Pmf for the name of the class,pmffor an instance of the class, and PMF for the mathematical concept of a probability mass function.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 33,
+            "metadata": {
+              "chapter": 3
+            },
+            "score": 0.8599522113800049,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p43-003",
+            "text": "3.7 Glossary •Probability mass function (PMF): a representation of a distribution as a function that maps from values to probabilities. •probability: A frequency expressed as a fraction of the sample size. •normalization: The process of dividing a frequency by a sample size to get a probability. •index: In a pandas DataFrame, the index is a special column that contains the row labels.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 43,
+            "metadata": {
+              "chapter": 3
+            },
+            "score": 0.8586031710268972,
+            "strategy": "dense_pgvector_strategy_b"
+          }
+        ],
+        "context": "[b-thinkstats2-c3-c5-p32-001 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 32]\n32 Chapter 3. Probability mass functions >>> import thinkstats2 >>> pmf = thinkstats2.Pmf([1, 2, 2, 3, 5]) >>> pmf Pmf({1: 0.2, 2: 0.4, 3: 0.2, 5: 0.2}) The Pmf is normalized so total probability is 1. Pmf and Hist objects are similar in many ways; in fact, they inherit many of their methods from a common parent class. For example, the methods ValuesandItemswork the same way for both.\n\n[b-thinkstats2-c3-c5-p33-001 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 33]\n3.2. Plotting PMFs 33 To renormalize, callNormalize: >>> pmf.Normalize() >>> pmf.Total() 1.0 Pmf objects provide aCopymethod so you can make and modify a copy without affecting the original. My notation in this section might seem inconsistent, but there is a system: I use Pmf for the name of the class,pmffor an instance of the class, and PMF for the mathematical concept of a probability mass function.\n\n[b-thinkstats2-c3-c5-p43-003 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 43]\n3.7 Glossary •Probability mass function (PMF): a representation of a distribution as a function that maps from values to probabilities. •probability: A frequency expressed as a fraction of the sample size. •normalization: The process of dividing a frequency by a sample size to get a probability. •index: In a pandas DataFrame, the index is a special column that contains the row labels.",
+        "context_ids": [
+          "b-thinkstats2-c3-c5-p32-001",
+          "b-thinkstats2-c3-c5-p33-001",
+          "b-thinkstats2-c3-c5-p43-003"
+        ]
+      },
+      {
+        "event": "model_abstain",
+        "reason": "insufficient information to answer the question"
+      }
+    ],
+    "query_id": "q18",
+    "elapsed_ms": 7727.79640002409,
+    "model_usage": [
+      {
+        "prompt_tokens": 290,
+        "prompt_tokens_details": {
+          "cached_tokens": 255
+        },
+        "completion_tokens": 15,
+        "total_tokens": 305
+      },
+      {
+        "prompt_tokens": 796,
+        "prompt_tokens_details": {
+          "cached_tokens": 283
+        },
+        "completion_tokens": 18,
+        "total_tokens": 814
+      }
+    ]
+  },
+  {
+    "status": "answered",
+    "answer": "[b-thinkstats2-c3-c5-p69-002]",
+    "citations": [
+      "b-thinkstats2-c3-c5-p69-002"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "tool": "dense_pgvector_strategy_b",
+        "query": "How to generate a random value from a distribution if its inverse CDF is easy to compute?",
+        "filter": null,
+        "results": [
+          {
+            "id": "b-thinkstats2-c3-c5-p69-002",
+            "text": "5.6 Generating random numbers Analytic CDFs can be used to generate random numbers with a given distribution function,p= CDF(x). If there is an efficient way to compute the inverse CDF, we can generate random values with the appropriate distribution by choosingpfrom a uniform distribution between 0 and 1, then choosingx=ICDF(p). For example, the CDF of the exponential distribution is p= 1−e −λx Solving forxyields: x=−log(1−p)/λ So in Python we can write def expovariate(lam):",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 69,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.9117385149002075,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p60-004",
+            "text": "Its CDF is defined by an integral that does not have a closed form solution, but there are algorithms that evaluate it efficiently.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 60,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.8840888211674216,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p48-004",
+            "text": "Here are some values from its CDF: CDF(0) = 0 CDF(1) = 0.2 CDF(2) = 0.6 CDF(3) = 0.8 CDF(4) = 0.8 CDF(5) = 1 We can evaluate the CDF for any value ofx, not just values that appear in the sample. Ifxis less than the smallest value in the sample, CDF(x) is 0.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 48,
+            "metadata": {
+              "chapter": 4
+            },
+            "score": 0.8794240951538086,
+            "strategy": "dense_pgvector_strategy_b"
+          }
+        ],
+        "context": "[b-thinkstats2-c3-c5-p69-002 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 69]\n5.6 Generating random numbers Analytic CDFs can be used to generate random numbers with a given distribution function,p= CDF(x). If there is an efficient way to compute the inverse CDF, we can generate random values with the appropriate distribution by choosingpfrom a uniform distribution between 0 and 1, then choosingx=ICDF(p). For example, the CDF of the exponential distribution is p= 1−e −λx Solving forxyields: x=−log(1−p)/λ So in Python we can write def expovariate(lam):\n\n[b-thinkstats2-c3-c5-p60-004 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 60]\nIts CDF is defined by an integral that does not have a closed form solution, but there are algorithms that evaluate it efficiently.\n\n[b-thinkstats2-c3-c5-p48-004 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 48]\nHere are some values from its CDF: CDF(0) = 0 CDF(1) = 0.2 CDF(2) = 0.6 CDF(3) = 0.8 CDF(4) = 0.8 CDF(5) = 1 We can evaluate the CDF for any value ofx, not just values that appear in the sample. Ifxis less than the smallest value in the sample, CDF(x) is 0.",
+        "context_ids": [
+          "b-thinkstats2-c3-c5-p69-002",
+          "b-thinkstats2-c3-c5-p60-004",
+          "b-thinkstats2-c3-c5-p48-004"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "query_id": "q19",
+    "elapsed_ms": 8215.289400017355,
+    "model_usage": [
+      {
+        "prompt_tokens": 288,
+        "prompt_tokens_details": {
+          "cached_tokens": 281
+        },
+        "completion_tokens": 28,
+        "total_tokens": 316
+      },
+      {
+        "prompt_tokens": 750,
+        "prompt_tokens_details": {
+          "cached_tokens": 281
+        },
+        "completion_tokens": 47,
+        "total_tokens": 797
+      }
+    ]
+  },
+  {
+    "status": "abstain",
+    "answer": "Không đủ bằng chứng để trả lời.",
+    "citations": [],
+    "events": [
+      {
+        "event": "search",
+        "tool": "dense_pgvector_strategy_b",
+        "query": "example on city and town populations which model fits the remaining 99 percent better",
+        "filter": null,
+        "results": [
+          {
+            "id": "b-thinkstats2-c3-c5-p69-001",
+            "text": "5.6. Generating random numbers 69 0 1 2 3 4 5 6 7 log10 population 10-5 10-4 10-3 10-2 10-1 100 CCDF model data Figure 5.10: CCDFs of city and town populations, on a log-log scale. cities, but it is a better fit for that part of the distribution. The lognormal model is a better fit for the other 99%. Which model is appropriate depends on which part of the distribution is relevant.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 69,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.8674153764596373,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p68-001",
+            "text": "68 Chapter 5. Modeling distributions 0 2 4 6 8 10 x 0.0 0.2 0.4 0.6 0.8 1.0CDF Pareto CDF α =2 α =1 α =0.5 Figure 5.9: CDFs of Pareto distributions with different parameters. So if you plot logyversus logx, it should look like a straight line with slope −αand interceptαlogx m. As an example, let’s look at the sizes of cities and towns. The U.S. Census Bureau publishes the population of every incorporated city and town in the United States.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 68,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.8470040559768677,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p68-002",
+            "text": "I downloaded their data fromhttp://www.census.gov/popest/data/ cities/totals/2012/SUB-EST2012-3.html; it is in the repository for this book in a file namedPEP_2012_PEPANNRES_with_ann.csv. The repository also containspopulations.py, which reads the file and plots the distribution of populations. Figure 5.10 shows the CCDF of populations on a log-log scale. The largest 1% of cities and towns, below 10 −2, fall along a straight line.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 68,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.8452279567718506,
+            "strategy": "dense_pgvector_strategy_b"
+          }
+        ],
+        "context": "[b-thinkstats2-c3-c5-p69-001 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 69]\n5.6. Generating random numbers 69 0 1 2 3 4 5 6 7 log10 population 10-5 10-4 10-3 10-2 10-1 100 CCDF model data Figure 5.10: CCDFs of city and town populations, on a log-log scale. cities, but it is a better fit for that part of the distribution. The lognormal model is a better fit for the other 99%. Which model is appropriate depends on which part of the distribution is relevant.\n\n[b-thinkstats2-c3-c5-p68-001 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 68]\n68 Chapter 5. Modeling distributions 0 2 4 6 8 10 x 0.0 0.2 0.4 0.6 0.8 1.0CDF Pareto CDF α =2 α =1 α =0.5 Figure 5.9: CDFs of Pareto distributions with different parameters. So if you plot logyversus logx, it should look like a straight line with slope −αand interceptαlogx m. As an example, let’s look at the sizes of cities and towns. The U.S. Census Bureau publishes the population of every incorporated city and town in the United States.\n\n[b-thinkstats2-c3-c5-p68-002 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 68]\nI downloaded their data fromhttp://www.census.gov/popest/data/ cities/totals/2012/SUB-EST2012-3.html; it is in the repository for this book in a file namedPEP_2012_PEPANNRES_with_ann.csv. The repository also containspopulations.py, which reads the file and plots the distribution of populations. Figure 5.10 shows the CCDF of populations on a log-log scale. The largest 1% of cities and towns, below 10 −2, fall along a straight line.",
+        "context_ids": [
+          "b-thinkstats2-c3-c5-p69-001",
+          "b-thinkstats2-c3-c5-p68-001",
+          "b-thinkstats2-c3-c5-p68-002"
+        ]
+      },
+      {
+        "event": "invalid_or_missing_citations",
+        "model_action": {
+          "action": "answer",
+          "answer": "lognormal model",
+          "citations": [
+            "b-thinkstats2-c3-c5-p69-001"
+          ]
+        },
+        "available_context_ids": [
+          "b-thinkstats2-c3-c5-p69-001",
+          "b-thinkstats2-c3-c5-p68-001",
+          "b-thinkstats2-c3-c5-p68-002"
+        ]
+      }
+    ],
+    "query_id": "q20",
+    "elapsed_ms": 8636.330000008456,
+    "model_usage": [
+      {
+        "prompt_tokens": 295,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "completion_tokens": 25,
+        "total_tokens": 320
+      },
+      {
+        "prompt_tokens": 897,
+        "prompt_tokens_details": {
+          "cached_tokens": 288
+        },
+        "completion_tokens": 32,
+        "total_tokens": 929
+      }
+    ]
+  },
+  {
+    "status": "abstain",
+    "answer": "Không đủ bằng chứng để trả lời.",
+    "citations": [],
+    "events": [
+      {
+        "event": "search",
+        "tool": "dense_pgvector_strategy_b",
+        "query": "What is the weather in Hanoi today?",
+        "filter": null,
+        "results": [
+          {
+            "id": "b-thinkstats2-c3-c5-p39-001",
+            "text": "3.5. DataFrame indexing 39",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 39,
+            "metadata": {
+              "chapter": 3
+            },
+            "score": 0.7520227880491501,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p61-001",
+            "text": "5.2.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 61,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.7511075883443614,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p33-004",
+            "text": "Here’s the code that generates Figure 3.1:",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 33,
+            "metadata": {
+              "chapter": 3
+            },
+            "score": 0.7394397258758545,
+            "strategy": "dense_pgvector_strategy_b"
+          }
+        ],
+        "context": "[b-thinkstats2-c3-c5-p39-001 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 39]\n3.5. DataFrame indexing 39\n\n[b-thinkstats2-c3-c5-p61-001 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 61]\n5.2.\n\n[b-thinkstats2-c3-c5-p33-004 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 33]\nHere’s the code that generates Figure 3.1:",
+        "context_ids": [
+          "b-thinkstats2-c3-c5-p39-001",
+          "b-thinkstats2-c3-c5-p61-001",
+          "b-thinkstats2-c3-c5-p33-004"
+        ]
+      },
+      {
+        "event": "model_abstain",
+        "reason": "retrieved contexts are unrelated to weather in Hanoi"
+      }
+    ],
+    "query_id": "q23",
+    "elapsed_ms": 6429.303400043864,
+    "model_usage": [
+      {
+        "prompt_tokens": 277,
+        "prompt_tokens_details": {
+          "cached_tokens": 270
+        },
+        "completion_tokens": 18,
+        "total_tokens": 295
+      },
+      {
+        "prompt_tokens": 501,
+        "prompt_tokens_details": {
+          "cached_tokens": 270
+        },
+        "completion_tokens": 22,
+        "total_tokens": 523
+      }
+    ]
+  },
+  {
+    "status": "abstain",
+    "answer": "Không đủ bằng chứng để trả lời.",
+    "citations": [],
+    "events": [
+      {
+        "event": "search",
+        "tool": "dense_pgvector_strategy_b",
+        "query": "GPU model required to calculate CDF",
+        "filter": null,
+        "results": [
+          {
+            "id": "b-thinkstats2-c3-c5-p60-004",
+            "text": "Its CDF is defined by an integral that does not have a closed form solution, but there are algorithms that evaluate it efficiently.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 60,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.8587142397505951,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p49-002",
+            "text": "4.4 Representing CDFs thinkstats2provides a class named Cdf that represents CDFs. The fundamental methods Cdf provides are: •Prob(x): Given a valuex, computes the probabilityp= CDF(x). The bracket operator is equivalent toProb. •Value(p): Given a probabilityp, computes the corresponding value, x; that is, theinverse CDFofp. The Cdf constructor can take as an argument a list of values, a pandas Series, a Hist, Pmf, or another Cdf.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 49,
+            "metadata": {
+              "chapter": 4
+            },
+            "score": 0.8557519402651838,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p72-005",
+            "text": "Exercise 5.5In the repository for this book, you’ll find a set of data files calledmystery0.dat,mystery1.dat, and so on. Each contains a sequence of random numbers generated from an analytic distribution. You will also findtest_models.py, a script that reads data from a file and plots the CDF under a variety of transforms. You can run it like this:",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 72,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.8545788786568278,
+            "strategy": "dense_pgvector_strategy_b"
+          }
+        ],
+        "context": "[b-thinkstats2-c3-c5-p60-004 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 60]\nIts CDF is defined by an integral that does not have a closed form solution, but there are algorithms that evaluate it efficiently.\n\n[b-thinkstats2-c3-c5-p49-002 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 49]\n4.4 Representing CDFs thinkstats2provides a class named Cdf that represents CDFs. The fundamental methods Cdf provides are: •Prob(x): Given a valuex, computes the probabilityp= CDF(x). The bracket operator is equivalent toProb. •Value(p): Given a probabilityp, computes the corresponding value, x; that is, theinverse CDFofp. The Cdf constructor can take as an argument a list of values, a pandas Series, a Hist, Pmf, or another Cdf.\n\n[b-thinkstats2-c3-c5-p72-005 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 72]\nExercise 5.5In the repository for this book, you’ll find a set of data files calledmystery0.dat,mystery1.dat, and so on. Each contains a sequence of random numbers generated from an analytic distribution. You will also findtest_models.py, a script that reads data from a file and plots the CDF under a variety of transforms. You can run it like this:",
+        "context_ids": [
+          "b-thinkstats2-c3-c5-p60-004",
+          "b-thinkstats2-c3-c5-p49-002",
+          "b-thinkstats2-c3-c5-p72-005"
+        ]
+      },
+      {
+        "event": "model_abstain",
+        "reason": "insufficient_information_to_answer"
+      }
+    ],
+    "query_id": "q24",
+    "elapsed_ms": 7319.621000031475,
+    "model_usage": [
+      {
+        "prompt_tokens": 279,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "completion_tokens": 16,
+        "total_tokens": 295
+      },
+      {
+        "prompt_tokens": 696,
+        "prompt_tokens_details": {
+          "cached_tokens": 272
+        },
+        "completion_tokens": 16,
+        "total_tokens": 712
+      }
+    ]
+  }
+]

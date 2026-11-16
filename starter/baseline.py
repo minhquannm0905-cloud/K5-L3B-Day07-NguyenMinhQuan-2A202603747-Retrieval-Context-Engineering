@@ -8,6 +8,8 @@ import time
 import unicodedata
 from collections import Counter
 from pathlib import Path
+import re
+import unicodedata
 
 
 def tokenize(text):
@@ -47,9 +49,24 @@ def validate(chunks, questions):
                 raise ValueError(f"question {q['id']}: gold không nằm trọn trong chunk đúng nguồn/trang")
 
 
-def hit(chunk, gold):
-    return any(chunk['source_id'] == g['source_id'] and chunk['page'] == g['page'] and g['evidence'] in chunk['text'] for g in gold)
+def evidence_key(text):
+    """Normalize text only for robust evidence matching."""
+    text = unicodedata.normalize("NFKC", text)
+    text = re.sub(r"(?<=\w)-[ \t]*\r?\n[ \t]*(?=\w)", "", text)
+    text = text.replace("\u00ad", "").replace("\u2212", "-")
+    text = text.translate(str.maketrans("\u201c\u201d", '""'))
+    return "".join(text.split())
 
+
+def hit(chunk, gold):
+    chunk_key = evidence_key(chunk["text"])
+
+    return any(
+        chunk["source_id"] == item["source_id"]
+        and chunk["page"] == item["page"]
+        and evidence_key(item["evidence"]) in chunk_key
+        for item in gold
+    )
 
 class TfidfIndex:
     def __init__(self, chunks):
@@ -115,7 +132,11 @@ def main():
     chunks = json.loads(args.chunks.read_text(encoding='utf-8'))
     questions = json.loads(args.questions.read_text(encoding='utf-8'))
     # Do not inspect held-out test evidence during dev work.
-    selected = [q for q in questions if q.get('split') == args.split]
+    selected = [
+        q for q in questions
+        if q.get("split") == args.split
+        and q.get("answerable", True)
+    ]
     validate(chunks, selected)
     started = time.perf_counter()
     index = TfidfIndex(chunks)

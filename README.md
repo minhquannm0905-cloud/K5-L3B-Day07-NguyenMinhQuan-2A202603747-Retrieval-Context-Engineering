@@ -1,33 +1,143 @@
-# Day 7 — Agentic RAG
+# Day 7: Retrieval and Context Engineering
 
-**Bài cá nhân · Python 3.11+ · tiếp nối Day 6**
+Completed individual lab by **Nguyen Minh Quan** (student ID **2A202603747**). The project builds an evidence-grounded RAG agent over the *Think Stats, 2nd Edition* corpus prepared in Day 6. Three retrieval strategies were compared on the development split before the best strategy was evaluated on the held-out test split.
 
-Dùng embedding và vector store từ Day 6 để xây một agent biết tìm bằng chứng, trả lời có nguồn và nhận biết khi không đủ thông tin. Bạn tự chọn kiến trúc, số tool và cách tổ chức retrieval.
+## System overview
 
-> **Tùy chọn:** [Gợi ý dùng AI để lập trình](AGENT_SETUP.md) giúp bạn làm lab; phần này không bắt buộc và không tính điểm.
+| Component | Configuration |
+|---|---|
+| Dataset | *Think Stats, 2nd Edition*, Chapters 3–5 |
+| Indexed range | Printed pages 31–73 (43 pages) |
+| Corpus | 157 Strategy-B chunks |
+| Vector store | PostgreSQL 16 with pgvector, table `lab_chunks` |
+| Embedding model | `intfloat/e5-small-v2` (384 dimensions) |
+| Agent model | `qwen2.5:3b` through local Ollama |
+| Retrieval methods | TF-IDF, Dense E5 + pgvector, Hybrid RRF |
 
-## Bài cần làm
+Dense retrieval embeds queries with the E5 `query:` prefix and performs cosine-similarity search against the Day 6 Strategy-B embeddings in pgvector. Hybrid retrieval combines TF-IDF and dense candidate rankings using reciprocal rank fusion (RRF). The agent retrieves evidence, deduplicates context by chunk ID, and cites the chunk IDs used in its answer.
 
-![Agent tìm tài liệu trong kho Day 6 và trả lời có nguồn](assets/retrieval-pipeline.svg)
+## Dataset and benchmark
 
-1. Kết nối dữ liệu, embedding và vector store Day 6.
-2. Xây agent dùng model thật và ít nhất một khả năng truy xuất dữ liệu. Agent có thể dùng nhiều tool và nhiều lượt gọi.
-3. Thử **ít nhất 3 phương pháp retrieval khác nhau**, trong đó có dense retrieval dùng vector store Day 6. Tự chọn các phương pháp còn lại; xem [gợi ý](GUIDE.md#2-thử-các-phương-pháp-retrieval).
-4. Thử nhiều cấu hình, benchmark, phân tích lỗi và chọn cấu hình tốt trên **dev**; sau đó đánh giá trên **test**.
+The source corpus is the Day 6 Strategy-B output in the sibling repository:
 
-Benchmark tối thiểu có **24 câu**: dev gồm 15 câu có đáp án và 2 câu thiếu bằng chứng; test gồm 5 câu có đáp án và 2 câu thiếu bằng chứng. Xem [benchmark](BENCHMARK.md) và [rubric](RUBRIC.md).
+```text
+..\K5-L3B-Day06-NguyenMinhQuan-2A202603747--DataIngestionEngineering\data\processed\chunks_b.jsonl
+```
 
-## Thử thách nâng cao · +15 điểm
+The normalized Day 7 corpus is stored in `data/chunks.json`. The benchmark contains 24 cases:
 
-Index một tài liệu thực tế từ **100 trang** có bảng, ảnh và biểu đồ; xây agent truy xuất và trả lời các câu hỏi về nội dung đó. Hoàn thành [thử thách nâng cao](ADVANCED.md) và đạt **ít nhất 90% benchmark test** để nhận 15 điểm bonus. Phần cơ bản tối đa 85 điểm; toàn bài tối đa 100 điểm.
+- Dev: 15 answerable and 2 unanswerable questions.
+- Test: 5 answerable and 2 unanswerable questions.
+- Each answerable question includes a source ID, printed page, and gold evidence substring.
+- Each unanswerable question requires the agent to search and abstain.
 
-## Bắt đầu
+Gold evidence is used only for evaluation. It is not supplied to the retriever or agent.
 
-1. Đọc [hướng dẫn](GUIDE.md), [rubric](RUBRIC.md) và [quy tắc](RULES.md).
-2. Tạo repo cá nhân theo [cách nộp bài](SUBMISSION.md), chuẩn bị đầu ra Day 6 và model hỗ trợ tool calling.
-3. Dùng hoặc thay thế [starter](starter/README.md); bạn cần kết nối model và vector store thật.
-4. Chạy `python -m unittest discover -s tests -v`. Test mock chỉ kiểm tra code, không phải benchmark agent thật.
+## Retrieval results
 
-![Các bước thử nghiệm trên dev và đánh giá trên test](assets/experiment-loop.svg)
+| Strategy | Split | Hit@1 | Hit@3 | Context hit |
+|---|---|---:|---:|---:|
+| TF-IDF | Dev | 5/15 | 9/15 | 6/15 |
+| Dense E5 + pgvector | Dev | **8/15** | **12/15** | **12/15** |
+| Hybrid RRF | Dev | 6/15 | 11/15 | 11/15 |
+| Dense E5 + pgvector | Test | 2/5 | 3/5 | 3/5 |
 
-Nộp code, cách chạy, cấu hình, benchmark, trace và [báo cáo](report/individual/MSSV_HoTen.md). Thời gian ở [checkpoints](CHECKPOINTS.md) là gợi ý, có thể điều chỉnh theo lớp và phạm vi thử nghiệm.
+Dense E5 + pgvector was selected because it performed best on the dev split. The selected Dense configuration was then evaluated on the test split **without changing any retrieval settings**. Test results were not used to tune the retriever.
+
+## Reproducible setup
+
+### Prerequisites
+
+- Python 3.11 or later
+- PostgreSQL 16 with pgvector and the Day 6 `lab_chunks` table
+- The Day 6 sibling repository at the relative path shown above
+- Ollama with `qwen2.5:3b` installed locally
+
+Create and activate a Python environment, install the dependencies, and make the chat model available:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install "psycopg[binary]" sentence-transformers python-dotenv
+ollama pull qwen2.5:3b
+```
+
+Copy `.env.example` to `.env` and configure it privately for the existing Day 6 database and the local Ollama OpenAI-compatible endpoint. Do not commit `.env`, and do not place database connection strings, keys, or tokens in documentation.
+
+The database must already contain the 157 Strategy-B rows in `lab_chunks`, with document embeddings generated by `intfloat/e5-small-v2`. Database creation and indexing are documented in the Day 6 sibling repository.
+
+### Verify inputs
+
+Run commands from the Day 7 repository root. Confirm the actual Day 6 input path:
+
+```powershell
+$day6 = "..\K5-L3B-Day06-NguyenMinhQuan-2A202603747--DataIngestionEngineering"
+Test-Path "$day6\data\processed\chunks_b.jsonl"
+```
+
+The included converter can reproduce normalized answerable data in a separate output directory without replacing the prepared Day 7 benchmark:
+
+```powershell
+$day6 = "..\K5-L3B-Day06-NguyenMinhQuan-2A202603747--DataIngestionEngineering"
+python starter\convert_day6.py `
+  --chunks "$day6\data\processed\chunks_b.jsonl" `
+  --questions "$day6\benchmark\questions.json" `
+  --output reproduced_day6_data
+```
+
+Validate the prepared Day 7 corpus, questions, and agent cases:
+
+```powershell
+python src\check_readiness.py `
+  --chunks data\chunks.json `
+  --questions data\questions.json `
+  --cases data\agent_cases.json
+```
+
+## Reproduce retrieval evaluation
+
+The shared retrieval settings are `top-k=3` and a 2,000-character context budget. Hybrid RRF uses 10 candidates and an RRF constant of 60.
+
+```powershell
+python src\run_lab.py benchmark `
+  --strategy tfidf --chunks data\chunks.json --questions data\questions.json `
+  --split dev --top-k 3 --budget 2000 --output results\dev-tfidf
+
+python src\run_lab.py benchmark `
+  --strategy dense --chunks data\chunks.json --questions data\questions.json `
+  --split dev --top-k 3 --budget 2000 --output results\dev-dense
+
+python src\run_lab.py benchmark `
+  --strategy hybrid --chunks data\chunks.json --questions data\questions.json `
+  --split dev --top-k 3 --budget 2000 --candidate-k 10 --rrf-k 60 `
+  --output results\dev-hybrid
+```
+
+After selecting Dense on dev, reproduce its test evaluation with the same retrieval settings:
+
+```powershell
+python src\run_lab.py benchmark `
+  --strategy dense --chunks data\chunks.json --questions data\questions.json `
+  --split test --top-k 3 --budget 2000 --output results\test-dense
+```
+
+Run the test agent with the selected retriever:
+
+```powershell
+python src\run_lab.py agent `
+  --strategy dense --chunks data\chunks.json --cases data\agent_cases.json `
+  --split test --top-k 3 --budget 2000 --max-searches 3 `
+  --output results\agent-test-traces.json
+```
+
+## Repository guide
+
+- `src/run_lab.py`: command-line entry point for retrieval evaluation and agent runs.
+- `src/raglab/`: retrievers, pgvector integration, evaluation, provider, and agent loop.
+- `data/`: normalized chunks and benchmark cases.
+- `results/`: experiment summaries and traces.
+- `report/individual/2A202603747_NguyenMinhQuan.md`: completed individual report.
+
+## Conclusion
+
+Dense E5 + pgvector produced the strongest dev retrieval results, improving Hit@3 from 9/15 for TF-IDF to 12/15. Hybrid RRF was competitive at 11/15 but did not surpass Dense. With its settings frozen, Dense reached 3/5 Hit@3 and 3/5 context hit on the held-out test set.

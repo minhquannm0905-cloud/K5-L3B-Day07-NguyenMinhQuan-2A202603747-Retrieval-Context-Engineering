@@ -1,0 +1,303 @@
+[
+  {
+    "id": "q01",
+    "split": "dev",
+    "question": "How do you convert frequencies into probabilities when building a PMF?",
+    "expected_answer": "Divide each frequency by the total number of observations.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-c3-c5",
+        "page": 31,
+        "evidence": "A probability is a frequency expressed as a fraction of the sample size, n. To get from frequencies to probabilities, we divide through by n, which is called normalization."
+      }
+    ]
+  },
+  {
+    "id": "q02",
+    "split": "dev",
+    "question": "In Chapter 4, how is the CDF at a value x calculated from the observed data?",
+    "expected_answer": "Compute the fraction of observations less than or equal to x.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-c3-c5",
+        "page": 48,
+        "evidence": "To evaluate CDF(x) for a particular value of x, we compute the fraction of values in the distribution less than or equal to x."
+      }
+    ],
+    "filter": {
+      "chapter": 4
+    }
+  },
+  {
+    "id": "q03",
+    "split": "dev",
+    "question": "How is the interquartile range (IQR) calculated?",
+    "expected_answer": "Subtract the 25th percentile from the 75th percentile.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-c3-c5",
+        "page": 52,
+        "evidence": "The IQR is the difference between the 75th and 25th percentiles."
+      }
+    ]
+  },
+  {
+    "id": "q04",
+    "split": "dev",
+    "question": "What does a PMF associate with each possible value?",
+    "expected_answer": "It associates each value with its probability.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-c3-c5",
+        "page": 31,
+        "evidence": "Another way to represent a distribution is a probability mass function (PMF), which maps from each value to its probability."
+      }
+    ]
+  },
+  {
+    "id": "q05",
+    "split": "dev",
+    "question": "What should all the probabilities in a normalized PMF add up to?",
+    "expected_answer": "They should add up to 1.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-c3-c5",
+        "page": 32,
+        "evidence": "The Pmf is normalized so total probability is 1."
+      }
+    ]
+  },
+  {
+    "id": "q06",
+    "split": "dev",
+    "question": "How do the values stored in a Hist differ from those stored in a Pmf?",
+    "expected_answer": "A Hist stores integer counts, while a Pmf stores floating-point probabilities.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-c3-c5",
+        "page": 32,
+        "evidence": "a Hist maps from values to integer counters; a Pmf maps from values to floating-point probabilities."
+      }
+    ]
+  },
+  {
+    "id": "q07",
+    "split": "dev",
+    "question": "Why plot PMFs to compare two groups with different sample sizes?",
+    "expected_answer": "PMFs let you compare the distributions without raw counts being affected by the difference in sample size.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-c3-c5",
+        "page": 33,
+        "evidence": "By plotting the PMF instead of the histogram, we can compare the two distributions without being mislead by the difference in sample size."
+      }
+    ]
+  },
+  {
+    "id": "q08",
+    "split": "dev",
+    "question": "How do PercentileRank and Percentile differ in what they take as input and return?",
+    "expected_answer": "PercentileRank takes a value and returns its percentile rank. Percentile takes a percentile rank and returns the corresponding value.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-c3-c5",
+        "page": 47,
+        "evidence": "PercentileRank takes a value and computes its percentile rank in a set of values; Percentile takes a percentile rank and computes the corresponding value."
+      }
+    ]
+  },
+  {
+    "id": "q09",
+    "split": "dev",
+    "question": "How can you compute the median with the Percentile method?",
+    "expected_answer": "Call Percentile(50).",
+    "gold": [
+      {
+        "source_id": "thinkstats2-c3-c5",
+        "page": 52,
+        "evidence": "But Percentile(50) is simple and efficient to compute."
+      }
+    ]
+  },
+  {
+    "id": "q10",
+    "split": "dev",
+    "question": "What makes a distribution empirical in the book's terminology?",
+    "expected_answer": "It is based on observed data from a finite sample.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-c3-c5",
+        "page": 57,
+        "evidence": "The distributions we have used so far are called empirical distributions because they are based on empirical observations, which are necessarily finite samples."
+      }
+    ]
+  },
+  {
+    "id": "q11",
+    "split": "dev",
+    "question": "In Chapter 5, what is the CDF formula for an exponential distribution with parameter lambda?",
+    "expected_answer": "CDF(x) = 1 - exp(-lambda * x).",
+    "gold": [
+      {
+        "source_id": "thinkstats2-c3-c5",
+        "page": 57,
+        "evidence": "CDF(x) = 1 − e−λx"
+      }
+    ],
+    "filter": {
+      "chapter": 5
+    }
+  },
+  {
+    "id": "q12",
+    "split": "dev",
+    "question": "How does the book characterize an analytic distribution?",
+    "expected_answer": "Its CDF is specified by a mathematical function.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-c3-c5",
+        "page": 57,
+        "evidence": "an analytic distribution, which is characterized by a CDF that is a mathematical function."
+      }
+    ]
+  },
+  {
+    "id": "q13",
+    "split": "dev",
+    "question": "What shape should the complementary CDF of exponential data show when the y-axis is logarithmic?",
+    "expected_answer": "It should form a straight line.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-c3-c5",
+        "page": 59,
+        "evidence": "So on a log-y scale the CCDF is a straight line with slope −λ."
+      }
+    ]
+  },
+  {
+    "id": "q14",
+    "split": "dev",
+    "question": "What slope should the log of the CCDF have for an exponential distribution with rate lambda?",
+    "expected_answer": "The slope should be -lambda.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-c3-c5",
+        "page": 59,
+        "evidence": "So on a log-y scale the CCDF is a straight line with slope −λ."
+      }
+    ]
+  },
+  {
+    "id": "q15",
+    "split": "dev",
+    "question": "How can you use a normal probability plot to check whether positive data fit a lognormal model?",
+    "expected_answer": "Take the logarithm of the observations and make a normal probability plot of the transformed values.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-c3-c5",
+        "page": 65,
+        "evidence": "To test how well the sample fits a lognormal model, you can make a normal probability plot using the log of the values in the sample."
+      }
+    ]
+  },
+  {
+    "id": "q16",
+    "split": "test",
+    "question": "In Chapter 4, can the same value be selected more than once when sampling with replacement?",
+    "expected_answer": "Yes. Sampling with replacement allows the same value to be selected more than once.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-c3-c5",
+        "page": 56,
+        "evidence": "“With replacement” means that the same value can be chosen more than once"
+      }
+    ],
+    "filter": {
+      "chapter": 4
+    }
+  },
+  {
+    "id": "q17",
+    "split": "test",
+    "question": "In a CDF, which three percentile ranks correspond to the quartiles?",
+    "expected_answer": "The 25th, 50th, and 75th percentile ranks.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-c3-c5",
+        "page": 56,
+        "evidence": "the quartiles of a distribution are the 25th, 50th and 75th percentiles."
+      }
+    ]
+  },
+  {
+    "id": "q18",
+    "split": "test",
+    "question": "Given a PMF stored as a Pmf object, which method retrieves the probability associated with a particular value?",
+    "expected_answer": "Use the Prob method.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-c3-c5",
+        "page": 32,
+        "evidence": "To look up the probability associated with a value, use Prob:"
+      }
+    ]
+  },
+  {
+    "id": "q19",
+    "split": "test",
+    "question": "How can you generate a random value from a distribution if its inverse CDF is easy to compute?",
+    "expected_answer": "Draw a uniform random probability between 0 and 1, then apply the inverse CDF to it.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-c3-c5",
+        "page": 69,
+        "evidence": "by choosing p from a uniform distribution between 0 and 1, then choosing x = ICDF(p)."
+      }
+    ]
+  },
+  {
+    "id": "q20",
+    "split": "test",
+    "question": "In the example on city and town populations, which model fits the remaining 99 percent better after the largest cities are set aside?",
+    "expected_answer": "The lognormal model.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-c3-c5",
+        "page": 69,
+        "evidence": "The lognormal model is a better fit for the other 99%."
+      }
+    ]
+  },
+  {
+    "id": "q21",
+    "split": "dev",
+    "question": "What is the current population of Hanoi?",
+    "expected_answer": null,
+    "answerable": false,
+    "gold": []
+  },
+  {
+    "id": "q22",
+    "split": "dev",
+    "question": "Which laptop brand does the author recommend for running the examples?",
+    "expected_answer": null,
+    "answerable": false,
+    "gold": []
+  },
+  {
+    "id": "q23",
+    "split": "test",
+    "question": "What is the weather in Hanoi today?",
+    "expected_answer": null,
+    "answerable": false,
+    "gold": []
+  },
+  {
+    "id": "q24",
+    "split": "test",
+    "question": "What GPU model is required to calculate a CDF?",
+    "expected_answer": null,
+    "answerable": false,
+    "gold": []
+  }
+]

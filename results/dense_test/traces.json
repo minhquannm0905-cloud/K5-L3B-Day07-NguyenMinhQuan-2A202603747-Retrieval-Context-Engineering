@@ -1,0 +1,292 @@
+[
+  {
+    "query_id": "q16",
+    "question": "In Chapter 4, can the same value be selected more than once when sampling with replacement?",
+    "strategy": "dense_pgvector_strategy_b",
+    "top_k": 3,
+    "budget_chars": 2000,
+    "results": [
+      {
+        "id": "b-thinkstats2-c3-c5-p56-003",
+        "text": "means that the same value can be chosen more than once; “without replacement” means that once a value is chosen, it is removed from the population.",
+        "source_id": "thinkstats2-c3-c5",
+        "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+        "page": 56,
+        "metadata": {
+          "chapter": 4
+        },
+        "score": 0.8598632299981591,
+        "strategy": "dense_pgvector_strategy_b",
+        "hit": false
+      },
+      {
+        "id": "b-thinkstats2-c3-c5-p48-001",
+        "text": "48 Chapter 4. Cumulative distribution functions",
+        "source_id": "thinkstats2-c3-c5",
+        "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+        "page": 48,
+        "metadata": {
+          "chapter": 4
+        },
+        "score": 0.8144700284460211,
+        "strategy": "dense_pgvector_strategy_b",
+        "hit": false
+      },
+      {
+        "id": "b-thinkstats2-c3-c5-p48-003",
+        "text": "Here’s what that looks like as a function that takes a sequence,sample, and a value,x: def EvalCdf(sample, x): count = 0.0 for value in sample: if value <= x: count += 1 prob = count / len(sample) return prob This function is almost identical toPercentileRank, except that the result is a probability in the range 0–1 rather than a percentile rank in the range 0–100. As an example, suppose we collect a sample with the values [1, 2, 2, 3, 5].",
+        "source_id": "thinkstats2-c3-c5",
+        "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+        "page": 48,
+        "metadata": {
+          "chapter": 4
+        },
+        "score": 0.8107631319306429,
+        "strategy": "dense_pgvector_strategy_b",
+        "hit": false
+      }
+    ],
+    "context": "[b-thinkstats2-c3-c5-p56-003 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 56]\nmeans that the same value can be chosen more than once; “without replacement” means that once a value is chosen, it is removed from the population.\n\n[b-thinkstats2-c3-c5-p48-001 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 48]\n48 Chapter 4. Cumulative distribution functions\n\n[b-thinkstats2-c3-c5-p48-003 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 48]\nHere’s what that looks like as a function that takes a sequence,sample, and a value,x: def EvalCdf(sample, x): count = 0.0 for value in sample: if value <= x: count += 1 prob = count / len(sample) return prob This function is almost identical toPercentileRank, except that the result is a probability in the range 0–1 rather than a percentile rank in the range 0–100. As an example, suppose we collect a sample with the values [1, 2, 2, 3, 5].",
+    "context_ids": [
+      "b-thinkstats2-c3-c5-p56-003",
+      "b-thinkstats2-c3-c5-p48-001",
+      "b-thinkstats2-c3-c5-p48-003"
+    ],
+    "elapsed_ms": 47.18339996179566,
+    "hit1": false,
+    "hit3": false,
+    "context_hit": false
+  },
+  {
+    "query_id": "q17",
+    "question": "In a CDF, which three percentile ranks correspond to the quartiles?",
+    "strategy": "dense_pgvector_strategy_b",
+    "top_k": 3,
+    "budget_chars": 2000,
+    "results": [
+      {
+        "id": "b-thinkstats2-c3-c5-p51-003",
+        "text": "4.6 Percentile-based statistics Once you have computed a CDF, it is easy to compute percentiles and percentile ranks. The Cdf class provides these two methods: •PercentileRank(x): Given a valuex, computes its percentile rank, 100·CDF(x). •Percentile(p): Given a percentile rankp, computes the corresponding value,x. Equivalent toValue(p/100). Percentilecan be used to compute percentile-based summary statistics. For example, the 50th percentile is the value that divides the distribution in",
+        "source_id": "thinkstats2-c3-c5",
+        "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+        "page": 51,
+        "metadata": {
+          "chapter": 4
+        },
+        "score": 0.8639108700858571,
+        "strategy": "dense_pgvector_strategy_b",
+        "hit": false
+      },
+      {
+        "id": "b-thinkstats2-c3-c5-p53-002",
+        "text": "What this figure shows is that 10% of the sample is below the 10th percentile, 20% is below the 20th percentile, and so on, exactly as we should expect. So, regardless of the shape of the CDF, the distribution of percentile ranks is uniform. This property is useful, because it is the basis of a simple and efficient algorithm for generating random numbers with a given CDF.",
+        "source_id": "thinkstats2-c3-c5",
+        "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+        "page": 53,
+        "metadata": {
+          "chapter": 4
+        },
+        "score": 0.861453720244545,
+        "strategy": "dense_pgvector_strategy_b",
+        "hit": false
+      },
+      {
+        "id": "b-thinkstats2-c3-c5-p53-001",
+        "text": "4.7. Random numbers 53 0 20 40 60 80 100 percentile rank 0.0 0.2 0.4 0.6 0.8 1.0CDF percentile ranks Figure 4.5: CDF of percentile ranks for a random sample of birth weights. rank_cdf = thinkstats2.Cdf(ranks) thinkplot.Cdf(rank_cdf) thinkplot.Show(xlabel='percentile rank', ylabel='CDF') Figure 4.5 shows the result. The CDF is approximately a straight line, which means that the distribution is uniform. That outcome might be non-obvious, but it is a consequence of the way the CDF is defined.",
+        "source_id": "thinkstats2-c3-c5",
+        "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+        "page": 53,
+        "metadata": {
+          "chapter": 4
+        },
+        "score": 0.8600856149145609,
+        "strategy": "dense_pgvector_strategy_b",
+        "hit": false
+      }
+    ],
+    "context": "[b-thinkstats2-c3-c5-p51-003 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 51]\n4.6 Percentile-based statistics Once you have computed a CDF, it is easy to compute percentiles and percentile ranks. The Cdf class provides these two methods: •PercentileRank(x): Given a valuex, computes its percentile rank, 100·CDF(x). •Percentile(p): Given a percentile rankp, computes the corresponding value,x. Equivalent toValue(p/100). Percentilecan be used to compute percentile-based summary statistics. For example, the 50th percentile is the value that divides the distribution in\n\n[b-thinkstats2-c3-c5-p53-002 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 53]\nWhat this figure shows is that 10% of the sample is below the 10th percentile, 20% is below the 20th percentile, and so on, exactly as we should expect. So, regardless of the shape of the CDF, the distribution of percentile ranks is uniform. This property is useful, because it is the basis of a simple and efficient algorithm for generating random numbers with a given CDF.\n\n[b-thinkstats2-c3-c5-p53-001 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 53]\n4.7. Random numbers 53 0 20 40 60 80 100 percentile rank 0.0 0.2 0.4 0.6 0.8 1.0CDF percentile ranks Figure 4.5: CDF of percentile ranks for a random sample of birth weights. rank_cdf = thinkstats2.Cdf(ranks) thinkplot.Cdf(rank_cdf) thinkplot.Show(xlabel='percentile rank', ylabel='CDF') Figure 4.5 shows the result. The CDF is approximately a straight line, which means that the distribution is uniform. That outcome might be non-obvious, but it is a consequence of the way the CDF is defined.",
+    "context_ids": [
+      "b-thinkstats2-c3-c5-p51-003",
+      "b-thinkstats2-c3-c5-p53-002",
+      "b-thinkstats2-c3-c5-p53-001"
+    ],
+    "elapsed_ms": 46.48830002406612,
+    "hit1": false,
+    "hit3": false,
+    "context_hit": false
+  },
+  {
+    "query_id": "q18",
+    "question": "Given a PMF stored as a Pmf object, which method retrieves the probability associated with a particular value?",
+    "strategy": "dense_pgvector_strategy_b",
+    "top_k": 3,
+    "budget_chars": 2000,
+    "results": [
+      {
+        "id": "b-thinkstats2-c3-c5-p32-003",
+        "text": "To look up the probability associated with a value, useProb: >>> pmf.Prob(2) 0.4 The bracket operator is equivalent: >>> pmf[2] 0.4 You can modify an existing Pmf by incrementing the probability associated with a value: >>> pmf.Incr(2, 0.2) >>> pmf.Prob(2) 0.6 Or you can multiply a probability by a factor: >>> pmf.Mult(2, 0.5) >>> pmf.Prob(2) 0.3 If you modify a Pmf, the result may not be normalized; that is, the probabilities may no longer add up to 1.",
+        "source_id": "thinkstats2-c3-c5",
+        "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+        "page": 32,
+        "metadata": {
+          "chapter": 3
+        },
+        "score": 0.8792043400285057,
+        "strategy": "dense_pgvector_strategy_b",
+        "hit": true
+      },
+      {
+        "id": "b-thinkstats2-c3-c5-p32-004",
+        "text": "To check, you can callTotal, which returns the sum of the probabilities: >>> pmf.Total() 0.9",
+        "source_id": "thinkstats2-c3-c5",
+        "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+        "page": 32,
+        "metadata": {
+          "chapter": 3
+        },
+        "score": 0.8666476170244674,
+        "strategy": "dense_pgvector_strategy_b",
+        "hit": false
+      },
+      {
+        "id": "b-thinkstats2-c3-c5-p32-001",
+        "text": "32 Chapter 3. Probability mass functions >>> import thinkstats2 >>> pmf = thinkstats2.Pmf([1, 2, 2, 3, 5]) >>> pmf Pmf({1: 0.2, 2: 0.4, 3: 0.2, 5: 0.2}) The Pmf is normalized so total probability is 1. Pmf and Hist objects are similar in many ways; in fact, they inherit many of their methods from a common parent class. For example, the methods ValuesandItemswork the same way for both.",
+        "source_id": "thinkstats2-c3-c5",
+        "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+        "page": 32,
+        "metadata": {
+          "chapter": 3
+        },
+        "score": 0.8649228376242116,
+        "strategy": "dense_pgvector_strategy_b",
+        "hit": false
+      }
+    ],
+    "context": "[b-thinkstats2-c3-c5-p32-003 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 32]\nTo look up the probability associated with a value, useProb: >>> pmf.Prob(2) 0.4 The bracket operator is equivalent: >>> pmf[2] 0.4 You can modify an existing Pmf by incrementing the probability associated with a value: >>> pmf.Incr(2, 0.2) >>> pmf.Prob(2) 0.6 Or you can multiply a probability by a factor: >>> pmf.Mult(2, 0.5) >>> pmf.Prob(2) 0.3 If you modify a Pmf, the result may not be normalized; that is, the probabilities may no longer add up to 1.\n\n[b-thinkstats2-c3-c5-p32-004 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 32]\nTo check, you can callTotal, which returns the sum of the probabilities: >>> pmf.Total() 0.9\n\n[b-thinkstats2-c3-c5-p32-001 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 32]\n32 Chapter 3. Probability mass functions >>> import thinkstats2 >>> pmf = thinkstats2.Pmf([1, 2, 2, 3, 5]) >>> pmf Pmf({1: 0.2, 2: 0.4, 3: 0.2, 5: 0.2}) The Pmf is normalized so total probability is 1. Pmf and Hist objects are similar in many ways; in fact, they inherit many of their methods from a common parent class. For example, the methods ValuesandItemswork the same way for both.",
+    "context_ids": [
+      "b-thinkstats2-c3-c5-p32-003",
+      "b-thinkstats2-c3-c5-p32-004",
+      "b-thinkstats2-c3-c5-p32-001"
+    ],
+    "elapsed_ms": 37.22880000714213,
+    "hit1": true,
+    "hit3": true,
+    "context_hit": true
+  },
+  {
+    "query_id": "q19",
+    "question": "How can you generate a random value from a distribution if its inverse CDF is easy to compute?",
+    "strategy": "dense_pgvector_strategy_b",
+    "top_k": 3,
+    "budget_chars": 2000,
+    "results": [
+      {
+        "id": "b-thinkstats2-c3-c5-p69-002",
+        "text": "5.6 Generating random numbers Analytic CDFs can be used to generate random numbers with a given distribution function,p= CDF(x). If there is an efficient way to compute the inverse CDF, we can generate random values with the appropriate distribution by choosingpfrom a uniform distribution between 0 and 1, then choosingx=ICDF(p). For example, the CDF of the exponential distribution is p= 1−e −λx Solving forxyields: x=−log(1−p)/λ So in Python we can write def expovariate(lam):",
+        "source_id": "thinkstats2-c3-c5",
+        "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+        "page": 69,
+        "metadata": {
+          "chapter": 5
+        },
+        "score": 0.9092543125152588,
+        "strategy": "dense_pgvector_strategy_b",
+        "hit": true
+      },
+      {
+        "id": "b-thinkstats2-c3-c5-p60-004",
+        "text": "Its CDF is defined by an integral that does not have a closed form solution, but there are algorithms that evaluate it efficiently.",
+        "source_id": "thinkstats2-c3-c5",
+        "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+        "page": 60,
+        "metadata": {
+          "chapter": 5
+        },
+        "score": 0.8911446993860798,
+        "strategy": "dense_pgvector_strategy_b",
+        "hit": false
+      },
+      {
+        "id": "b-thinkstats2-c3-c5-p62-003",
+        "text": "If you are interested in the hard way, you can read about it athttps://en.wikipedia. org/wiki/Normal_probability_plot. Here’s the easy way: 1. Sort the values in the sample. 2. From a standard normal distribution (μ= 0 andσ= 1), generate a random sample with the same size as the sample, and sort it. 3. Plot the sorted values from the sample versus the random values.",
+        "source_id": "thinkstats2-c3-c5",
+        "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+        "page": 62,
+        "metadata": {
+          "chapter": 5
+        },
+        "score": 0.8788533282963453,
+        "strategy": "dense_pgvector_strategy_b",
+        "hit": false
+      }
+    ],
+    "context": "[b-thinkstats2-c3-c5-p69-002 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 69]\n5.6 Generating random numbers Analytic CDFs can be used to generate random numbers with a given distribution function,p= CDF(x). If there is an efficient way to compute the inverse CDF, we can generate random values with the appropriate distribution by choosingpfrom a uniform distribution between 0 and 1, then choosingx=ICDF(p). For example, the CDF of the exponential distribution is p= 1−e −λx Solving forxyields: x=−log(1−p)/λ So in Python we can write def expovariate(lam):\n\n[b-thinkstats2-c3-c5-p60-004 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 60]\nIts CDF is defined by an integral that does not have a closed form solution, but there are algorithms that evaluate it efficiently.\n\n[b-thinkstats2-c3-c5-p62-003 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 62]\nIf you are interested in the hard way, you can read about it athttps://en.wikipedia. org/wiki/Normal_probability_plot. Here’s the easy way: 1. Sort the values in the sample. 2. From a standard normal distribution (μ= 0 andσ= 1), generate a random sample with the same size as the sample, and sort it. 3. Plot the sorted values from the sample versus the random values.",
+    "context_ids": [
+      "b-thinkstats2-c3-c5-p69-002",
+      "b-thinkstats2-c3-c5-p60-004",
+      "b-thinkstats2-c3-c5-p62-003"
+    ],
+    "elapsed_ms": 50.305499986279756,
+    "hit1": true,
+    "hit3": true,
+    "context_hit": true
+  },
+  {
+    "query_id": "q20",
+    "question": "In the example on city and town populations, which model fits the remaining 99 percent better after the largest cities are set aside?",
+    "strategy": "dense_pgvector_strategy_b",
+    "top_k": 3,
+    "budget_chars": 2000,
+    "results": [
+      {
+        "id": "b-thinkstats2-c3-c5-p68-002",
+        "text": "I downloaded their data fromhttp://www.census.gov/popest/data/ cities/totals/2012/SUB-EST2012-3.html; it is in the repository for this book in a file namedPEP_2012_PEPANNRES_with_ann.csv. The repository also containspopulations.py, which reads the file and plots the distribution of populations. Figure 5.10 shows the CCDF of populations on a log-log scale. The largest 1% of cities and towns, below 10 −2, fall along a straight line.",
+        "source_id": "thinkstats2-c3-c5",
+        "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+        "page": 68,
+        "metadata": {
+          "chapter": 5
+        },
+        "score": 0.8251733779907227,
+        "strategy": "dense_pgvector_strategy_b",
+        "hit": false
+      },
+      {
+        "id": "b-thinkstats2-c3-c5-p69-001",
+        "text": "5.6. Generating random numbers 69 0 1 2 3 4 5 6 7 log10 population 10-5 10-4 10-3 10-2 10-1 100 CCDF model data Figure 5.10: CCDFs of city and town populations, on a log-log scale. cities, but it is a better fit for that part of the distribution. The lognormal model is a better fit for the other 99%. Which model is appropriate depends on which part of the distribution is relevant.",
+        "source_id": "thinkstats2-c3-c5",
+        "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+        "page": 69,
+        "metadata": {
+          "chapter": 5
+        },
+        "score": 0.8237291083497356,
+        "strategy": "dense_pgvector_strategy_b",
+        "hit": true
+      },
+      {
+        "id": "b-thinkstats2-c3-c5-p68-003",
+        "text": "So we could conclude, as some researchers have, that the tail of this distribution fits a Pareto model. On the other hand, a lognormal distribution also models the data well. Figure 5.11 shows the CDF of populations and a lognormal model (left), and a normal probability plot (right). Both plots show good agreement between the data and the model. Neither model is perfect. The Pareto model only applies to the largest 1% of",
+        "source_id": "thinkstats2-c3-c5",
+        "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+        "page": 68,
+        "metadata": {
+          "chapter": 5
+        },
+        "score": 0.8121361360387698,
+        "strategy": "dense_pgvector_strategy_b",
+        "hit": false
+      }
+    ],
+    "context": "[b-thinkstats2-c3-c5-p68-002 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 68]\nI downloaded their data fromhttp://www.census.gov/popest/data/ cities/totals/2012/SUB-EST2012-3.html; it is in the repository for this book in a file namedPEP_2012_PEPANNRES_with_ann.csv. The repository also containspopulations.py, which reads the file and plots the distribution of populations. Figure 5.10 shows the CCDF of populations on a log-log scale. The largest 1% of cities and towns, below 10 −2, fall along a straight line.\n\n[b-thinkstats2-c3-c5-p69-001 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 69]\n5.6. Generating random numbers 69 0 1 2 3 4 5 6 7 log10 population 10-5 10-4 10-3 10-2 10-1 100 CCDF model data Figure 5.10: CCDFs of city and town populations, on a log-log scale. cities, but it is a better fit for that part of the distribution. The lognormal model is a better fit for the other 99%. Which model is appropriate depends on which part of the distribution is relevant.\n\n[b-thinkstats2-c3-c5-p68-003 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 68]\nSo we could conclude, as some researchers have, that the tail of this distribution fits a Pareto model. On the other hand, a lognormal distribution also models the data well. Figure 5.11 shows the CDF of populations and a lognormal model (left), and a normal probability plot (right). Both plots show good agreement between the data and the model. Neither model is perfect. The Pareto model only applies to the largest 1% of",
+    "context_ids": [
+      "b-thinkstats2-c3-c5-p68-002",
+      "b-thinkstats2-c3-c5-p69-001",
+      "b-thinkstats2-c3-c5-p68-003"
+    ],
+    "elapsed_ms": 45.96850002417341,
+    "hit1": false,
+    "hit3": true,
+    "context_hit": true
+  }
+]

@@ -1,4 +1,6 @@
 .venv/
+.tools/
+.tmp-results/
 __pycache__/
 *.pyc
 .env

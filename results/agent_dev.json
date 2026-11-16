@@ -1,0 +1,1397 @@
+[
+  {
+    "status": "answered",
+    "answer": "[b-thinkstats2-c3-c5-p31-002]",
+    "citations": [
+      "b-thinkstats2-c3-c5-p31-002"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "tool": "dense_pgvector_strategy_b",
+        "query": "How do you convert frequencies into probabilities when building a PMF?",
+        "filter": null,
+        "results": [
+          {
+            "id": "b-thinkstats2-c3-c5-p31-002",
+            "text": "3.1 Pmfs Another way to represent a distribution is aprobability mass function (PMF), which maps from each value to its probability. Aprobabilityis a frequency expressed as a fraction of the sample size,n. To get from frequencies to probabilities, we divide through byn, which is callednormalization.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 31,
+            "metadata": {
+              "chapter": 3
+            },
+            "score": 0.8915975883726633,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p32-003",
+            "text": "To look up the probability associated with a value, useProb: >>> pmf.Prob(2) 0.4 The bracket operator is equivalent: >>> pmf[2] 0.4 You can modify an existing Pmf by incrementing the probability associated with a value: >>> pmf.Incr(2, 0.2) >>> pmf.Prob(2) 0.6 Or you can multiply a probability by a factor: >>> pmf.Mult(2, 0.5) >>> pmf.Prob(2) 0.3 If you modify a Pmf, the result may not be normalized; that is, the probabilities may no longer add up to 1.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 32,
+            "metadata": {
+              "chapter": 3
+            },
+            "score": 0.8822612832628931,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p32-004",
+            "text": "To check, you can callTotal, which returns the sum of the probabilities: >>> pmf.Total() 0.9",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 32,
+            "metadata": {
+              "chapter": 3
+            },
+            "score": 0.8813879035248872,
+            "strategy": "dense_pgvector_strategy_b"
+          }
+        ],
+        "context": "[b-thinkstats2-c3-c5-p31-002 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 31]\n3.1 Pmfs Another way to represent a distribution is aprobability mass function (PMF), which maps from each value to its probability. Aprobabilityis a frequency expressed as a fraction of the sample size,n. To get from frequencies to probabilities, we divide through byn, which is callednormalization.\n\n[b-thinkstats2-c3-c5-p32-003 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 32]\nTo look up the probability associated with a value, useProb: >>> pmf.Prob(2) 0.4 The bracket operator is equivalent: >>> pmf[2] 0.4 You can modify an existing Pmf by incrementing the probability associated with a value: >>> pmf.Incr(2, 0.2) >>> pmf.Prob(2) 0.6 Or you can multiply a probability by a factor: >>> pmf.Mult(2, 0.5) >>> pmf.Prob(2) 0.3 If you modify a Pmf, the result may not be normalized; that is, the probabilities may no longer add up to 1.\n\n[b-thinkstats2-c3-c5-p32-004 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 32]\nTo check, you can callTotal, which returns the sum of the probabilities: >>> pmf.Total() 0.9",
+        "context_ids": [
+          "b-thinkstats2-c3-c5-p31-002",
+          "b-thinkstats2-c3-c5-p32-003",
+          "b-thinkstats2-c3-c5-p32-004"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "query_id": "q01",
+    "elapsed_ms": 8007.678999972995,
+    "model_usage": [
+      {
+        "prompt_tokens": 276,
+        "prompt_tokens_details": {
+          "cached_tokens": 250
+        },
+        "completion_tokens": 22,
+        "total_tokens": 298
+      },
+      {
+        "prompt_tokens": 714,
+        "prompt_tokens_details": {
+          "cached_tokens": 269
+        },
+        "completion_tokens": 47,
+        "total_tokens": 761
+      }
+    ]
+  },
+  {
+    "status": "answered",
+    "answer": "[b-thinkstats2-c3-c5-p49-001]",
+    "citations": [
+      "b-thinkstats2-c3-c5-p49-001"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "tool": "dense_pgvector_strategy_b",
+        "query": "Chapter 4 CDF calculation observed data",
+        "filter": {
+          "chapter": 4
+        },
+        "results": [
+          {
+            "id": "b-thinkstats2-c3-c5-p49-001",
+            "text": "4.4. Representing CDFs 49 0 1 2 3 4 5 6 x 0.0 0.2 0.4 0.6 0.8 1.0CDF Figure 4.2: Example of a CDF. Ifxis greater than the largest value, CDF(x) is 1. Figure 4.2 is a graphical representation of this CDF. The CDF of a sample is a step function.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 49,
+            "metadata": {
+              "chapter": 4
+            },
+            "score": 0.8869121209487771,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p50-001",
+            "text": "50 Chapter 4. Cumulative distribution functions 0 10 20 30 40 50 weeks 0.0 0.2 0.4 0.6 0.8 1.0CDF Pregnancy length prglngth Figure 4.3: CDF of pregnancy length. thinkplotprovides a function namedCdfthat plots Cdfs as lines: thinkplot.Cdf(cdf) thinkplot.Show(xlabel='weeks', ylabel='CDF') Figure 4.3 shows the result. One way to read a CDF is to look up percentiles. For example, it looks like about 10% of pregnancies are shorter than 36 weeks, and about 90% are shorter than 41 weeks.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 50,
+            "metadata": {
+              "chapter": 4
+            },
+            "score": 0.8743292243088217,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p48-001",
+            "text": "48 Chapter 4. Cumulative distribution functions",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 48,
+            "metadata": {
+              "chapter": 4
+            },
+            "score": 0.8665313462456694,
+            "strategy": "dense_pgvector_strategy_b"
+          }
+        ],
+        "context": "[b-thinkstats2-c3-c5-p49-001 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 49]\n4.4. Representing CDFs 49 0 1 2 3 4 5 6 x 0.0 0.2 0.4 0.6 0.8 1.0CDF Figure 4.2: Example of a CDF. Ifxis greater than the largest value, CDF(x) is 1. Figure 4.2 is a graphical representation of this CDF. The CDF of a sample is a step function.\n\n[b-thinkstats2-c3-c5-p50-001 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 50]\n50 Chapter 4. Cumulative distribution functions 0 10 20 30 40 50 weeks 0.0 0.2 0.4 0.6 0.8 1.0CDF Pregnancy length prglngth Figure 4.3: CDF of pregnancy length. thinkplotprovides a function namedCdfthat plots Cdfs as lines: thinkplot.Cdf(cdf) thinkplot.Show(xlabel='weeks', ylabel='CDF') Figure 4.3 shows the result. One way to read a CDF is to look up percentiles. For example, it looks like about 10% of pregnancies are shorter than 36 weeks, and about 90% are shorter than 41 weeks.\n\n[b-thinkstats2-c3-c5-p48-001 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 48]\n48 Chapter 4. Cumulative distribution functions",
+        "context_ids": [
+          "b-thinkstats2-c3-c5-p49-001",
+          "b-thinkstats2-c3-c5-p50-001",
+          "b-thinkstats2-c3-c5-p48-001"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "query_id": "q02",
+    "elapsed_ms": 8109.462599968538,
+    "model_usage": [
+      {
+        "prompt_tokens": 283,
+        "prompt_tokens_details": {
+          "cached_tokens": 250
+        },
+        "completion_tokens": 17,
+        "total_tokens": 300
+      },
+      {
+        "prompt_tokens": 760,
+        "prompt_tokens_details": {
+          "cached_tokens": 276
+        },
+        "completion_tokens": 47,
+        "total_tokens": 807
+      }
+    ]
+  },
+  {
+    "status": "answered",
+    "answer": "[b-thinkstats2-c3-c5-p71-004]",
+    "citations": [
+      "b-thinkstats2-c3-c5-p71-004"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "tool": "dense_pgvector_strategy_b",
+        "query": "how to calculate interquartile range IQR",
+        "filter": null,
+        "results": [
+          {
+            "id": "b-thinkstats2-c3-c5-p71-004",
+            "text": "5.8 Exercises For the following exercises, you can start withchap05ex.ipynb. My solution is inchap05soln.ipynb. Exercise 5.1In the BRFSS (see Section 5.4), the distribution of heights is roughly normal with parametersμ= 178 cm andσ= 7.7 cm for men, and μ= 163 cm andσ= 7.3 cm for women. In order to join Blue Man Group, you have to be male between 5’10” and 6’1” (seehttp://bluemancasting.com). What percentage of the U.S. male population is in this range? Hint: usescipy.stats.norm.cdf.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 71,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.8461796045303345,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p60-001",
+            "text": "60 Chapter 5. Modeling distributions With the argumentcomplement=True,thinkplot.Cdfcomputes the complementary CDF before plotting. And withyscale='log',thinkplot.Show sets theyaxis to a logarithmic scale. Figure 5.2 (right) shows the result. It is not exactly straight, which indicates that the exponential distribution is not a perfect model for this data. Most likely the underlying assumption—that a birth is equally likely at any time of day—is not exactly true.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 60,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.8453964683177208,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p52-001",
+            "text": "52 Chapter 4. Cumulative distribution functions half, also known as themedian. Like the mean, the median is a measure of the central tendency of a distribution. Actually, there are several definitions of “median,” each with different properties. ButPercentile(50)is simple and efficient to compute. Another percentile-based statistic is theinterquartile range(IQR), which is a measure of the spread of a distribution. The IQR is the difference between the 75th and 25th percentiles.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 52,
+            "metadata": {
+              "chapter": 4
+            },
+            "score": 0.8453622552536589,
+            "strategy": "dense_pgvector_strategy_b"
+          }
+        ],
+        "context": "[b-thinkstats2-c3-c5-p71-004 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 71]\n5.8 Exercises For the following exercises, you can start withchap05ex.ipynb. My solution is inchap05soln.ipynb. Exercise 5.1In the BRFSS (see Section 5.4), the distribution of heights is roughly normal with parametersμ= 178 cm andσ= 7.7 cm for men, and μ= 163 cm andσ= 7.3 cm for women. In order to join Blue Man Group, you have to be male between 5’10” and 6’1” (seehttp://bluemancasting.com). What percentage of the U.S. male population is in this range? Hint: usescipy.stats.norm.cdf.\n\n[b-thinkstats2-c3-c5-p60-001 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 60]\n60 Chapter 5. Modeling distributions With the argumentcomplement=True,thinkplot.Cdfcomputes the complementary CDF before plotting. And withyscale='log',thinkplot.Show sets theyaxis to a logarithmic scale. Figure 5.2 (right) shows the result. It is not exactly straight, which indicates that the exponential distribution is not a perfect model for this data. Most likely the underlying assumption—that a birth is equally likely at any time of day—is not exactly true.\n\n[b-thinkstats2-c3-c5-p52-001 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 52]\n52 Chapter 4. Cumulative distribution functions half, also known as themedian. Like the mean, the median is a measure of the central tendency of a distribution. Actually, there are several definitions of “median,” each with different properties. ButPercentile(50)is simple and efficient to compute. Another percentile-based statistic is theinterquartile range(IQR), which is a measure of the spread of a distribution. The IQR is the difference between the 75th and 25th percentiles.",
+        "context_ids": [
+          "b-thinkstats2-c3-c5-p71-004",
+          "b-thinkstats2-c3-c5-p60-001",
+          "b-thinkstats2-c3-c5-p52-001"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "query_id": "q03",
+    "elapsed_ms": 8365.608700027224,
+    "model_usage": [
+      {
+        "prompt_tokens": 277,
+        "prompt_tokens_details": {
+          "cached_tokens": 251
+        },
+        "completion_tokens": 19,
+        "total_tokens": 296
+      },
+      {
+        "prompt_tokens": 844,
+        "prompt_tokens_details": {
+          "cached_tokens": 270
+        },
+        "completion_tokens": 47,
+        "total_tokens": 891
+      }
+    ]
+  },
+  {
+    "status": "answered",
+    "answer": "[b-thinkstats2-c3-c5-p31-002] associates a PMF with each possible value",
+    "citations": [
+      "b-thinkstats2-c3-c5-p31-002"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "tool": "dense_pgvector_strategy_b",
+        "query": "What does a PMF associate with each possible value?",
+        "filter": null,
+        "results": [
+          {
+            "id": "b-thinkstats2-c3-c5-p45-002",
+            "text": "4.1 The limits of PMFs PMFs work well if the number of values is small. But as the number of values increases, the probability associated with each value gets smaller and the effect of random noise increases. For example, we might be interested in the distribution of birth weights. In the NSFG data, the variabletotalwgt_lbrecords weight at birth in pounds. Figure 4.1 shows the PMF of these values for first babies and others.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 45,
+            "metadata": {
+              "chapter": 4
+            },
+            "score": 0.8660486500205219,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p31-002",
+            "text": "3.1 Pmfs Another way to represent a distribution is aprobability mass function (PMF), which maps from each value to its probability. Aprobabilityis a frequency expressed as a fraction of the sample size,n. To get from frequencies to probabilities, we divide through byn, which is callednormalization.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 31,
+            "metadata": {
+              "chapter": 3
+            },
+            "score": 0.8632888442357476,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p32-003",
+            "text": "To look up the probability associated with a value, useProb: >>> pmf.Prob(2) 0.4 The bracket operator is equivalent: >>> pmf[2] 0.4 You can modify an existing Pmf by incrementing the probability associated with a value: >>> pmf.Incr(2, 0.2) >>> pmf.Prob(2) 0.6 Or you can multiply a probability by a factor: >>> pmf.Mult(2, 0.5) >>> pmf.Prob(2) 0.3 If you modify a Pmf, the result may not be normalized; that is, the probabilities may no longer add up to 1.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 32,
+            "metadata": {
+              "chapter": 3
+            },
+            "score": 0.8632465086432407,
+            "strategy": "dense_pgvector_strategy_b"
+          }
+        ],
+        "context": "[b-thinkstats2-c3-c5-p45-002 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 45]\n4.1 The limits of PMFs PMFs work well if the number of values is small. But as the number of values increases, the probability associated with each value gets smaller and the effect of random noise increases. For example, we might be interested in the distribution of birth weights. In the NSFG data, the variabletotalwgt_lbrecords weight at birth in pounds. Figure 4.1 shows the PMF of these values for first babies and others.\n\n[b-thinkstats2-c3-c5-p31-002 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 31]\n3.1 Pmfs Another way to represent a distribution is aprobability mass function (PMF), which maps from each value to its probability. Aprobabilityis a frequency expressed as a fraction of the sample size,n. To get from frequencies to probabilities, we divide through byn, which is callednormalization.\n\n[b-thinkstats2-c3-c5-p32-003 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 32]\nTo look up the probability associated with a value, useProb: >>> pmf.Prob(2) 0.4 The bracket operator is equivalent: >>> pmf[2] 0.4 You can modify an existing Pmf by incrementing the probability associated with a value: >>> pmf.Incr(2, 0.2) >>> pmf.Prob(2) 0.6 Or you can multiply a probability by a factor: >>> pmf.Mult(2, 0.5) >>> pmf.Prob(2) 0.3 If you modify a Pmf, the result may not be normalized; that is, the probabilities may no longer add up to 1.",
+        "context_ids": [
+          "b-thinkstats2-c3-c5-p45-002",
+          "b-thinkstats2-c3-c5-p31-002",
+          "b-thinkstats2-c3-c5-p32-003"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "query_id": "q04",
+    "elapsed_ms": 8222.279000037815,
+    "model_usage": [
+      {
+        "prompt_tokens": 274,
+        "prompt_tokens_details": {
+          "cached_tokens": 267
+        },
+        "completion_tokens": 20,
+        "total_tokens": 294
+      },
+      {
+        "prompt_tokens": 779,
+        "prompt_tokens_details": {
+          "cached_tokens": 267
+        },
+        "completion_tokens": 55,
+        "total_tokens": 834
+      }
+    ]
+  },
+  {
+    "status": "abstain",
+    "answer": "Không đủ bằng chứng để trả lời.",
+    "citations": [],
+    "events": [
+      {
+        "event": "search",
+        "tool": "dense_pgvector_strategy_b",
+        "query": "What should all the probabilities in a normalized PMF add up to?",
+        "filter": null,
+        "results": [
+          {
+            "id": "b-thinkstats2-c3-c5-p32-004",
+            "text": "To check, you can callTotal, which returns the sum of the probabilities: >>> pmf.Total() 0.9",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 32,
+            "metadata": {
+              "chapter": 3
+            },
+            "score": 0.871779278304663,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p32-003",
+            "text": "To look up the probability associated with a value, useProb: >>> pmf.Prob(2) 0.4 The bracket operator is equivalent: >>> pmf[2] 0.4 You can modify an existing Pmf by incrementing the probability associated with a value: >>> pmf.Incr(2, 0.2) >>> pmf.Prob(2) 0.6 Or you can multiply a probability by a factor: >>> pmf.Mult(2, 0.5) >>> pmf.Prob(2) 0.3 If you modify a Pmf, the result may not be normalized; that is, the probabilities may no longer add up to 1.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 32,
+            "metadata": {
+              "chapter": 3
+            },
+            "score": 0.8716526704041574,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p45-002",
+            "text": "4.1 The limits of PMFs PMFs work well if the number of values is small. But as the number of values increases, the probability associated with each value gets smaller and the effect of random noise increases. For example, we might be interested in the distribution of birth weights. In the NSFG data, the variabletotalwgt_lbrecords weight at birth in pounds. Figure 4.1 shows the PMF of these values for first babies and others.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 45,
+            "metadata": {
+              "chapter": 4
+            },
+            "score": 0.8701666152278643,
+            "strategy": "dense_pgvector_strategy_b"
+          }
+        ],
+        "context": "[b-thinkstats2-c3-c5-p32-004 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 32]\nTo check, you can callTotal, which returns the sum of the probabilities: >>> pmf.Total() 0.9\n\n[b-thinkstats2-c3-c5-p32-003 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 32]\nTo look up the probability associated with a value, useProb: >>> pmf.Prob(2) 0.4 The bracket operator is equivalent: >>> pmf[2] 0.4 You can modify an existing Pmf by incrementing the probability associated with a value: >>> pmf.Incr(2, 0.2) >>> pmf.Prob(2) 0.6 Or you can multiply a probability by a factor: >>> pmf.Mult(2, 0.5) >>> pmf.Prob(2) 0.3 If you modify a Pmf, the result may not be normalized; that is, the probabilities may no longer add up to 1.\n\n[b-thinkstats2-c3-c5-p45-002 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 45]\n4.1 The limits of PMFs PMFs work well if the number of values is small. But as the number of values increases, the probability associated with each value gets smaller and the effect of random noise increases. For example, we might be interested in the distribution of birth weights. In the NSFG data, the variabletotalwgt_lbrecords weight at birth in pounds. Figure 4.1 shows the PMF of these values for first babies and others.",
+        "context_ids": [
+          "b-thinkstats2-c3-c5-p32-004",
+          "b-thinkstats2-c3-c5-p32-003",
+          "b-thinkstats2-c3-c5-p45-002"
+        ]
+      },
+      {
+        "event": "model_abstain",
+        "reason": "insufficient information to answer the question"
+      }
+    ],
+    "query_id": "q05",
+    "elapsed_ms": 7566.232899960596,
+    "model_usage": [
+      {
+        "prompt_tokens": 277,
+        "prompt_tokens_details": {
+          "cached_tokens": 251
+        },
+        "completion_tokens": 23,
+        "total_tokens": 300
+      },
+      {
+        "prompt_tokens": 746,
+        "prompt_tokens_details": {
+          "cached_tokens": 270
+        },
+        "completion_tokens": 18,
+        "total_tokens": 764
+      }
+    ]
+  },
+  {
+    "status": "answered",
+    "answer": "[b-thinkstats2-c3-c5-p32-002]",
+    "citations": [
+      "b-thinkstats2-c3-c5-p32-002"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "tool": "dense_pgvector_strategy_b",
+        "query": "Hist Pmf values differences",
+        "filter": null,
+        "results": [
+          {
+            "id": "b-thinkstats2-c3-c5-p32-002",
+            "text": "The biggest difference is that a Hist maps from values to integer counters; a Pmf maps from values to floating-point probabilities.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 32,
+            "metadata": {
+              "chapter": 3
+            },
+            "score": 0.8911621570587158,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p33-003",
+            "text": "Since I use Hist objects, I usually don’t usepyplot.hist. Figure 3.1 shows PMFs of pregnancy length for first babies and others using bar graphs (left) and step functions (right). By plotting the PMF instead of the histogram, we can compare the two distributions without being mislead by the difference in sample size. Based on this figure, first babies seem to be less likely than others to arrive on time (week 39) and more likely to be a late (weeks 41 and 42).",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 33,
+            "metadata": {
+              "chapter": 3
+            },
+            "score": 0.8667701641595229,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p32-001",
+            "text": "32 Chapter 3. Probability mass functions >>> import thinkstats2 >>> pmf = thinkstats2.Pmf([1, 2, 2, 3, 5]) >>> pmf Pmf({1: 0.2, 2: 0.4, 3: 0.2, 5: 0.2}) The Pmf is normalized so total probability is 1. Pmf and Hist objects are similar in many ways; in fact, they inherit many of their methods from a common parent class. For example, the methods ValuesandItemswork the same way for both.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 32,
+            "metadata": {
+              "chapter": 3
+            },
+            "score": 0.8613561474468635,
+            "strategy": "dense_pgvector_strategy_b"
+          }
+        ],
+        "context": "[b-thinkstats2-c3-c5-p32-002 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 32]\nThe biggest difference is that a Hist maps from values to integer counters; a Pmf maps from values to floating-point probabilities.\n\n[b-thinkstats2-c3-c5-p33-003 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 33]\nSince I use Hist objects, I usually don’t usepyplot.hist. Figure 3.1 shows PMFs of pregnancy length for first babies and others using bar graphs (left) and step functions (right). By plotting the PMF instead of the histogram, we can compare the two distributions without being mislead by the difference in sample size. Based on this figure, first babies seem to be less likely than others to arrive on time (week 39) and more likely to be a late (weeks 41 and 42).\n\n[b-thinkstats2-c3-c5-p32-001 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 32]\n32 Chapter 3. Probability mass functions >>> import thinkstats2 >>> pmf = thinkstats2.Pmf([1, 2, 2, 3, 5]) >>> pmf Pmf({1: 0.2, 2: 0.4, 3: 0.2, 5: 0.2}) The Pmf is normalized so total probability is 1. Pmf and Hist objects are similar in many ways; in fact, they inherit many of their methods from a common parent class. For example, the methods ValuesandItemswork the same way for both.",
+        "context_ids": [
+          "b-thinkstats2-c3-c5-p32-002",
+          "b-thinkstats2-c3-c5-p33-003",
+          "b-thinkstats2-c3-c5-p32-001"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "query_id": "q06",
+    "elapsed_ms": 7939.55960002495,
+    "model_usage": [
+      {
+        "prompt_tokens": 280,
+        "prompt_tokens_details": {
+          "cached_tokens": 250
+        },
+        "completion_tokens": 14,
+        "total_tokens": 294
+      },
+      {
+        "prompt_tokens": 738,
+        "prompt_tokens_details": {
+          "cached_tokens": 273
+        },
+        "completion_tokens": 47,
+        "total_tokens": 785
+      }
+    ]
+  },
+  {
+    "status": "answered",
+    "answer": "[b-thinkstats2-c3-c5-p33-003]",
+    "citations": [
+      "b-thinkstats2-c3-c5-p33-003"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "tool": "dense_pgvector_strategy_b",
+        "query": "Why plot PMFs to compare two groups with different sample sizes",
+        "filter": null,
+        "results": [
+          {
+            "id": "b-thinkstats2-c3-c5-p33-003",
+            "text": "Since I use Hist objects, I usually don’t usepyplot.hist. Figure 3.1 shows PMFs of pregnancy length for first babies and others using bar graphs (left) and step functions (right). By plotting the PMF instead of the histogram, we can compare the two distributions without being mislead by the difference in sample size. Based on this figure, first babies seem to be less likely than others to arrive on time (week 39) and more likely to be a late (weeks 41 and 42).",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 33,
+            "metadata": {
+              "chapter": 3
+            },
+            "score": 0.8840212364171525,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p45-002",
+            "text": "4.1 The limits of PMFs PMFs work well if the number of values is small. But as the number of values increases, the probability associated with each value gets smaller and the effect of random noise increases. For example, we might be interested in the distribution of birth weights. In the NSFG data, the variabletotalwgt_lbrecords weight at birth in pounds. Figure 4.1 shows the PMF of these values for first babies and others.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 45,
+            "metadata": {
+              "chapter": 4
+            },
+            "score": 0.8778700305300948,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p34-004",
+            "text": "The first figure (on the left) displays the Pmfs usingthinkplot.Hist, as we have seen before. The second call toPrePlotresets the color generator. ThenSubPlot switches to the second figure (on the right) and displays the Pmfs using thinkplot.Pmfs. I used theaxisoption to ensure that the two figures are",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 34,
+            "metadata": {
+              "chapter": 3
+            },
+            "score": 0.8769521713256836,
+            "strategy": "dense_pgvector_strategy_b"
+          }
+        ],
+        "context": "[b-thinkstats2-c3-c5-p33-003 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 33]\nSince I use Hist objects, I usually don’t usepyplot.hist. Figure 3.1 shows PMFs of pregnancy length for first babies and others using bar graphs (left) and step functions (right). By plotting the PMF instead of the histogram, we can compare the two distributions without being mislead by the difference in sample size. Based on this figure, first babies seem to be less likely than others to arrive on time (week 39) and more likely to be a late (weeks 41 and 42).\n\n[b-thinkstats2-c3-c5-p45-002 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 45]\n4.1 The limits of PMFs PMFs work well if the number of values is small. But as the number of values increases, the probability associated with each value gets smaller and the effect of random noise increases. For example, we might be interested in the distribution of birth weights. In the NSFG data, the variabletotalwgt_lbrecords weight at birth in pounds. Figure 4.1 shows the PMF of these values for first babies and others.\n\n[b-thinkstats2-c3-c5-p34-004 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 34]\nThe first figure (on the left) displays the Pmfs usingthinkplot.Hist, as we have seen before. The second call toPrePlotresets the color generator. ThenSubPlot switches to the second figure (on the right) and displays the Pmfs using thinkplot.Pmfs. I used theaxisoption to ensure that the two figures are",
+        "context_ids": [
+          "b-thinkstats2-c3-c5-p33-003",
+          "b-thinkstats2-c3-c5-p45-002",
+          "b-thinkstats2-c3-c5-p34-004"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "query_id": "q07",
+    "elapsed_ms": 8089.80730001349,
+    "model_usage": [
+      {
+        "prompt_tokens": 276,
+        "prompt_tokens_details": {
+          "cached_tokens": 250
+        },
+        "completion_tokens": 21,
+        "total_tokens": 297
+      },
+      {
+        "prompt_tokens": 759,
+        "prompt_tokens_details": {
+          "cached_tokens": 269
+        },
+        "completion_tokens": 47,
+        "total_tokens": 806
+      }
+    ]
+  },
+  {
+    "status": "answered",
+    "answer": "[b-thinkstats2-c3-c5-p47-004] PercentileRank takes a value and computes its percentile rank in a set of values, while Percentile takes a percentile rank and computes the corresponding value",
+    "citations": [
+      "b-thinkstats2-c3-c5-p47-004"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "tool": "dense_pgvector_strategy_b",
+        "query": "PercentileRank Percentile input output",
+        "filter": null,
+        "results": [
+          {
+            "id": "b-thinkstats2-c3-c5-p47-004",
+            "text": "To summarize, PercentileRanktakes a value and computes its percentile rank in a set of values;Percentiletakes a percentile rank and computes the corresponding value.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 47,
+            "metadata": {
+              "chapter": 4
+            },
+            "score": 0.8805805729435509,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p54-003",
+            "text": "More generally, given position and field size, we can compute percentile rank: def PositionToPercentile(position, field_size): beat = field_size - position + 1 percentile = 100.0 * beat / field_size return percentile In my age group, denoted M4049 for “male between 40 and 49 years of age”, I came in 26th out of 256. So my percentile rank in my age group was 90%. If I am still running in 10 years (and I hope I am), I will be in the M5059 division.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 54,
+            "metadata": {
+              "chapter": 4
+            },
+            "score": 0.8684475578728311,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p47-003",
+            "text": "This implementation ofPercentileis not efficient. A better approach is to use the percentile rank to compute the index of the corresponding percentile: def Percentile2(scores, percentile_rank): scores.sort() index = percentile_rank * (len(scores)-1) // 100 return scores[index] The difference between “percentile” and “percentile rank” can be confusing, and people do not always use the terms precisely.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 47,
+            "metadata": {
+              "chapter": 4
+            },
+            "score": 0.8608788417722236,
+            "strategy": "dense_pgvector_strategy_b"
+          }
+        ],
+        "context": "[b-thinkstats2-c3-c5-p47-004 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 47]\nTo summarize, PercentileRanktakes a value and computes its percentile rank in a set of values;Percentiletakes a percentile rank and computes the corresponding value.\n\n[b-thinkstats2-c3-c5-p54-003 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 54]\nMore generally, given position and field size, we can compute percentile rank: def PositionToPercentile(position, field_size): beat = field_size - position + 1 percentile = 100.0 * beat / field_size return percentile In my age group, denoted M4049 for “male between 40 and 49 years of age”, I came in 26th out of 256. So my percentile rank in my age group was 90%. If I am still running in 10 years (and I hope I am), I will be in the M5059 division.\n\n[b-thinkstats2-c3-c5-p47-003 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 47]\nThis implementation ofPercentileis not efficient. A better approach is to use the percentile rank to compute the index of the corresponding percentile: def Percentile2(scores, percentile_rank): scores.sort() index = percentile_rank * (len(scores)-1) // 100 return scores[index] The difference between “percentile” and “percentile rank” can be confusing, and people do not always use the terms precisely.",
+        "context_ids": [
+          "b-thinkstats2-c3-c5-p47-004",
+          "b-thinkstats2-c3-c5-p54-003",
+          "b-thinkstats2-c3-c5-p47-003"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "query_id": "q08",
+    "elapsed_ms": 8511.703399999533,
+    "model_usage": [
+      {
+        "prompt_tokens": 281,
+        "prompt_tokens_details": {
+          "cached_tokens": 252
+        },
+        "completion_tokens": 16,
+        "total_tokens": 297
+      },
+      {
+        "prompt_tokens": 728,
+        "prompt_tokens_details": {
+          "cached_tokens": 274
+        },
+        "completion_tokens": 76,
+        "total_tokens": 804
+      }
+    ]
+  },
+  {
+    "status": "answered",
+    "answer": "[b-thinkstats2-c3-c5-p47-003]",
+    "citations": [
+      "b-thinkstats2-c3-c5-p47-003"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "tool": "dense_pgvector_strategy_b",
+        "query": "How to compute median using percentile method",
+        "filter": null,
+        "results": [
+          {
+            "id": "b-thinkstats2-c3-c5-p47-003",
+            "text": "This implementation ofPercentileis not efficient. A better approach is to use the percentile rank to compute the index of the corresponding percentile: def Percentile2(scores, percentile_rank): scores.sort() index = percentile_rank * (len(scores)-1) // 100 return scores[index] The difference between “percentile” and “percentile rank” can be confusing, and people do not always use the terms precisely.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 47,
+            "metadata": {
+              "chapter": 4
+            },
+            "score": 0.9020575881004333,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p47-002",
+            "text": "If you are given a percentile rank and you want to find the corresponding value, one option is to sort the values and search for the one you want: def Percentile(scores, percentile_rank): scores.sort() for score in scores: if PercentileRank(scores, score) >= percentile_rank: return score The result of this calculation is apercentile. For example, the 50th percentile is the value with percentile rank 50. In the distribution of exam scores, the 50th percentile is 77.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 47,
+            "metadata": {
+              "chapter": 4
+            },
+            "score": 0.894632875919342,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p54-003",
+            "text": "More generally, given position and field size, we can compute percentile rank: def PositionToPercentile(position, field_size): beat = field_size - position + 1 percentile = 100.0 * beat / field_size return percentile In my age group, denoted M4049 for “male between 40 and 49 years of age”, I came in 26th out of 256. So my percentile rank in my age group was 90%. If I am still running in 10 years (and I hope I am), I will be in the M5059 division.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 54,
+            "metadata": {
+              "chapter": 4
+            },
+            "score": 0.8896703720092773,
+            "strategy": "dense_pgvector_strategy_b"
+          }
+        ],
+        "context": "[b-thinkstats2-c3-c5-p47-003 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 47]\nThis implementation ofPercentileis not efficient. A better approach is to use the percentile rank to compute the index of the corresponding percentile: def Percentile2(scores, percentile_rank): scores.sort() index = percentile_rank * (len(scores)-1) // 100 return scores[index] The difference between “percentile” and “percentile rank” can be confusing, and people do not always use the terms precisely.\n\n[b-thinkstats2-c3-c5-p47-002 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 47]\nIf you are given a percentile rank and you want to find the corresponding value, one option is to sort the values and search for the one you want: def Percentile(scores, percentile_rank): scores.sort() for score in scores: if PercentileRank(scores, score) >= percentile_rank: return score The result of this calculation is apercentile. For example, the 50th percentile is the value with percentile rank 50. In the distribution of exam scores, the 50th percentile is 77.\n\n[b-thinkstats2-c3-c5-p54-003 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 54]\nMore generally, given position and field size, we can compute percentile rank: def PositionToPercentile(position, field_size): beat = field_size - position + 1 percentile = 100.0 * beat / field_size return percentile In my age group, denoted M4049 for “male between 40 and 49 years of age”, I came in 26th out of 256. So my percentile rank in my age group was 90%. If I am still running in 10 years (and I hope I am), I will be in the M5059 division.",
+        "context_ids": [
+          "b-thinkstats2-c3-c5-p47-003",
+          "b-thinkstats2-c3-c5-p47-002",
+          "b-thinkstats2-c3-c5-p54-003"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "query_id": "q09",
+    "elapsed_ms": 8229.985899990425,
+    "model_usage": [
+      {
+        "prompt_tokens": 275,
+        "prompt_tokens_details": {
+          "cached_tokens": 251
+        },
+        "completion_tokens": 16,
+        "total_tokens": 291
+      },
+      {
+        "prompt_tokens": 798,
+        "prompt_tokens_details": {
+          "cached_tokens": 268
+        },
+        "completion_tokens": 47,
+        "total_tokens": 845
+      }
+    ]
+  },
+  {
+    "status": "answered",
+    "answer": "[b-thinkstats2-c3-c5-p57-001]",
+    "citations": [
+      "b-thinkstats2-c3-c5-p57-001"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "tool": "dense_pgvector_strategy_b",
+        "query": "What makes a distribution empirical in the book's terminology?",
+        "filter": null,
+        "results": [
+          {
+            "id": "b-thinkstats2-c3-c5-p73-004",
+            "text": "5.9 Glossary •empirical distribution: The distribution of values in a sample. •analytic distribution: A distribution whose CDF is an analytic function. •model: A useful simplification.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 73,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.871679425239563,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p57-001",
+            "text": "Chapter 5 Modeling distributions The distributions we have used so far are calledempirical distributions because they are based on empirical observations, which are necessarily finite samples. The alternative is ananalytic distribution, which is characterized by a CDF that is a mathematical function. Analytic distributions can be used to model empirical distributions. In this context, amodelis a simplification that leaves out unneeded details.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 57,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.8527272343635559,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p73-005",
+            "text": "Analytic distributions are often good models of more complex empirical distributions. •interarrival time: The elapsed time between two events. •complementary CDF: A function that maps from a value,x, to the fraction of values that exceedx, which is 1−CDF(x). •standard normal distribution: The normal distribution with mean 0 and standard deviation 1. •normal probability plot: A plot of the values in a sample versus random values from a standard normal distribution.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 73,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.826970100402832,
+            "strategy": "dense_pgvector_strategy_b"
+          }
+        ],
+        "context": "[b-thinkstats2-c3-c5-p73-004 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 73]\n5.9 Glossary •empirical distribution: The distribution of values in a sample. •analytic distribution: A distribution whose CDF is an analytic function. •model: A useful simplification.\n\n[b-thinkstats2-c3-c5-p57-001 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 57]\nChapter 5 Modeling distributions The distributions we have used so far are calledempirical distributions because they are based on empirical observations, which are necessarily finite samples. The alternative is ananalytic distribution, which is characterized by a CDF that is a mathematical function. Analytic distributions can be used to model empirical distributions. In this context, amodelis a simplification that leaves out unneeded details.\n\n[b-thinkstats2-c3-c5-p73-005 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 73]\nAnalytic distributions are often good models of more complex empirical distributions. •interarrival time: The elapsed time between two events. •complementary CDF: A function that maps from a value,x, to the fraction of values that exceedx, which is 1−CDF(x). •standard normal distribution: The normal distribution with mean 0 and standard deviation 1. •normal probability plot: A plot of the values in a sample versus random values from a standard normal distribution.",
+        "context_ids": [
+          "b-thinkstats2-c3-c5-p73-004",
+          "b-thinkstats2-c3-c5-p57-001",
+          "b-thinkstats2-c3-c5-p73-005"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "query_id": "q10",
+    "elapsed_ms": 7828.609799966216,
+    "model_usage": [
+      {
+        "prompt_tokens": 274,
+        "prompt_tokens_details": {
+          "cached_tokens": 251
+        },
+        "completion_tokens": 20,
+        "total_tokens": 294
+      },
+      {
+        "prompt_tokens": 693,
+        "prompt_tokens_details": {
+          "cached_tokens": 267
+        },
+        "completion_tokens": 47,
+        "total_tokens": 740
+      }
+    ]
+  },
+  {
+    "status": "answered",
+    "answer": "[b-thinkstats2-c3-c5-p57-003]",
+    "citations": [
+      "b-thinkstats2-c3-c5-p57-003"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "tool": "dense_pgvector_strategy_b",
+        "query": "CDF formula exponential distribution lambda",
+        "filter": {
+          "chapter": 5
+        },
+        "results": [
+          {
+            "id": "b-thinkstats2-c3-c5-p57-003",
+            "text": "5.1 The exponential distribution I’ll start with theexponential distributionbecause it is relatively simple. The CDF of the exponential distribution is CDF(x) = 1−e −λx The parameter,λ, determines the shape of the distribution. Figure 5.1 shows what this CDF looks like withλ= 0.5, 1, and 2.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 57,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.9027847320671304,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p58-001",
+            "text": "58 Chapter 5. Modeling distributions 0.0 0.5 1.0 1.5 2.0 2.5 3.0 x 0.0 0.2 0.4 0.6 0.8 1.0CDF Exponential CDF λ =2 λ =1 λ =0.5 Figure 5.1: CDFs of exponential distributions with various parameters. In the real world, exponential distributions come up when we look at a series of events and measure the times between events, calledinterarrival times. If the events are equally likely to occur at any time, the distribution of interarrival times tends to look like an exponential distribution.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 58,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.9021688045363906,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p59-001",
+            "text": "5.1. The exponential distribution 59 0 20 40 60 80 100 120 140 160 minutes 0.0 0.2 0.4 0.6 0.8 1.0CDF 0 20 40 60 80 100 120 140 160 minutes 10-2 10-1 100 CCDF Figure 5.2: CDF of interarrival times (left) and CCDF on a log-y scale (right). bution of these interarrival times. Figure 5.2 (left) shows the CDF. It seems to have the general shape of an exponential distribution, but how can we tell? One way is to plot thecomplementary CDF, which is 1−CDF(x), on a log-y scale.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 59,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.8867230814645018,
+            "strategy": "dense_pgvector_strategy_b"
+          }
+        ],
+        "context": "[b-thinkstats2-c3-c5-p57-003 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 57]\n5.1 The exponential distribution I’ll start with theexponential distributionbecause it is relatively simple. The CDF of the exponential distribution is CDF(x) = 1−e −λx The parameter,λ, determines the shape of the distribution. Figure 5.1 shows what this CDF looks like withλ= 0.5, 1, and 2.\n\n[b-thinkstats2-c3-c5-p58-001 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 58]\n58 Chapter 5. Modeling distributions 0.0 0.5 1.0 1.5 2.0 2.5 3.0 x 0.0 0.2 0.4 0.6 0.8 1.0CDF Exponential CDF λ =2 λ =1 λ =0.5 Figure 5.1: CDFs of exponential distributions with various parameters. In the real world, exponential distributions come up when we look at a series of events and measure the times between events, calledinterarrival times. If the events are equally likely to occur at any time, the distribution of interarrival times tends to look like an exponential distribution.\n\n[b-thinkstats2-c3-c5-p59-001 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 59]\n5.1. The exponential distribution 59 0 20 40 60 80 100 120 140 160 minutes 0.0 0.2 0.4 0.6 0.8 1.0CDF 0 20 40 60 80 100 120 140 160 minutes 10-2 10-1 100 CCDF Figure 5.2: CDF of interarrival times (left) and CCDF on a log-y scale (right). bution of these interarrival times. Figure 5.2 (left) shows the CDF. It seems to have the general shape of an exponential distribution, but how can we tell? One way is to plot thecomplementary CDF, which is 1−CDF(x), on a log-y scale.",
+        "context_ids": [
+          "b-thinkstats2-c3-c5-p57-003",
+          "b-thinkstats2-c3-c5-p58-001",
+          "b-thinkstats2-c3-c5-p59-001"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "query_id": "q11",
+    "elapsed_ms": 8631.71509996755,
+    "model_usage": [
+      {
+        "prompt_tokens": 282,
+        "prompt_tokens_details": {
+          "cached_tokens": 250
+        },
+        "completion_tokens": 14,
+        "total_tokens": 296
+      },
+      {
+        "prompt_tokens": 907,
+        "prompt_tokens_details": {
+          "cached_tokens": 275
+        },
+        "completion_tokens": 47,
+        "total_tokens": 954
+      }
+    ]
+  },
+  {
+    "status": "answered",
+    "answer": "[b-thinkstats2-c3-c5-p71-002]",
+    "citations": [
+      "b-thinkstats2-c3-c5-p71-002"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "tool": "dense_pgvector_strategy_b",
+        "query": "How does the book characterize an analytic distribution?",
+        "filter": null,
+        "results": [
+          {
+            "id": "b-thinkstats2-c3-c5-p71-002",
+            "text": "For example, Pareto distributions are often the result of generative processes with positive feedback (so-called preferential attachment processes: seehttp://wikipedia.org/wiki/Preferential_attachment.). Also, analytic distributions lend themselves to mathematical analysis, as we will see in Chapter 14. But it is important to remember that all models are imperfect. Data from the real world never fit an analytic distribution perfectly.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 71,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.8452504965513664,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p57-002",
+            "text": "This chapter presents common analytic distributions and uses them to model data from a variety of sources. The code for this chapter is inanalytic.py. For information about downloading and working with this code, see Section 0.2.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 57,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.8403070664222811,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p73-003",
+            "text": "Extract the distribution of incomes from this dataset. Are any of the analytic distributions in this chapter a good model of the data? A solution to this exercise is inhinc_soln.py.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 73,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.839739460976188,
+            "strategy": "dense_pgvector_strategy_b"
+          }
+        ],
+        "context": "[b-thinkstats2-c3-c5-p71-002 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 71]\nFor example, Pareto distributions are often the result of generative processes with positive feedback (so-called preferential attachment processes: seehttp://wikipedia.org/wiki/Preferential_attachment.). Also, analytic distributions lend themselves to mathematical analysis, as we will see in Chapter 14. But it is important to remember that all models are imperfect. Data from the real world never fit an analytic distribution perfectly.\n\n[b-thinkstats2-c3-c5-p57-002 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 57]\nThis chapter presents common analytic distributions and uses them to model data from a variety of sources. The code for this chapter is inanalytic.py. For information about downloading and working with this code, see Section 0.2.\n\n[b-thinkstats2-c3-c5-p73-003 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 73]\nExtract the distribution of incomes from this dataset. Are any of the analytic distributions in this chapter a good model of the data? A solution to this exercise is inhinc_soln.py.",
+        "context_ids": [
+          "b-thinkstats2-c3-c5-p71-002",
+          "b-thinkstats2-c3-c5-p57-002",
+          "b-thinkstats2-c3-c5-p73-003"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "query_id": "q12",
+    "elapsed_ms": 7629.539499990642,
+    "model_usage": [
+      {
+        "prompt_tokens": 272,
+        "prompt_tokens_details": {
+          "cached_tokens": 251
+        },
+        "completion_tokens": 18,
+        "total_tokens": 290
+      },
+      {
+        "prompt_tokens": 636,
+        "prompt_tokens_details": {
+          "cached_tokens": 265
+        },
+        "completion_tokens": 47,
+        "total_tokens": 683
+      }
+    ]
+  },
+  {
+    "status": "answered",
+    "answer": "[b-thinkstats2-c3-c5-p59-002]",
+    "citations": [
+      "b-thinkstats2-c3-c5-p59-002"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "tool": "dense_pgvector_strategy_b",
+        "query": "What shape should the complementary CDF of exponential data show when the y-axis is logarithmic?",
+        "filter": null,
+        "results": [
+          {
+            "id": "b-thinkstats2-c3-c5-p59-002",
+            "text": "For data from an exponential distribution, the result is a straight line. Let’s see why that works. If you plot the complementary CDF (CCDF) of a dataset that you think is exponential, you expect to see a function like: y≈e −λx Taking the log of both sides yields: logy≈ −λx So on a log-y scale the CCDF is a straight line with slope−λ. Here’s how we can generate a plot like that: thinkplot.Cdf(cdf, complement=True) thinkplot.Show(xlabel='minutes', ylabel='CCDF', yscale='log')",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 59,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.8832738538654088,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p59-001",
+            "text": "5.1. The exponential distribution 59 0 20 40 60 80 100 120 140 160 minutes 0.0 0.2 0.4 0.6 0.8 1.0CDF 0 20 40 60 80 100 120 140 160 minutes 10-2 10-1 100 CCDF Figure 5.2: CDF of interarrival times (left) and CCDF on a log-y scale (right). bution of these interarrival times. Figure 5.2 (left) shows the CDF. It seems to have the general shape of an exponential distribution, but how can we tell? One way is to plot thecomplementary CDF, which is 1−CDF(x), on a log-y scale.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 59,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.8798073077431613,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p60-001",
+            "text": "60 Chapter 5. Modeling distributions With the argumentcomplement=True,thinkplot.Cdfcomputes the complementary CDF before plotting. And withyscale='log',thinkplot.Show sets theyaxis to a logarithmic scale. Figure 5.2 (right) shows the result. It is not exactly straight, which indicates that the exponential distribution is not a perfect model for this data. Most likely the underlying assumption—that a birth is equally likely at any time of day—is not exactly true.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 60,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.8676858623215058,
+            "strategy": "dense_pgvector_strategy_b"
+          }
+        ],
+        "context": "[b-thinkstats2-c3-c5-p59-002 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 59]\nFor data from an exponential distribution, the result is a straight line. Let’s see why that works. If you plot the complementary CDF (CCDF) of a dataset that you think is exponential, you expect to see a function like: y≈e −λx Taking the log of both sides yields: logy≈ −λx So on a log-y scale the CCDF is a straight line with slope−λ. Here’s how we can generate a plot like that: thinkplot.Cdf(cdf, complement=True) thinkplot.Show(xlabel='minutes', ylabel='CCDF', yscale='log')\n\n[b-thinkstats2-c3-c5-p59-001 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 59]\n5.1. The exponential distribution 59 0 20 40 60 80 100 120 140 160 minutes 0.0 0.2 0.4 0.6 0.8 1.0CDF 0 20 40 60 80 100 120 140 160 minutes 10-2 10-1 100 CCDF Figure 5.2: CDF of interarrival times (left) and CCDF on a log-y scale (right). bution of these interarrival times. Figure 5.2 (left) shows the CDF. It seems to have the general shape of an exponential distribution, but how can we tell? One way is to plot thecomplementary CDF, which is 1−CDF(x), on a log-y scale.\n\n[b-thinkstats2-c3-c5-p60-001 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 60]\n60 Chapter 5. Modeling distributions With the argumentcomplement=True,thinkplot.Cdfcomputes the complementary CDF before plotting. And withyscale='log',thinkplot.Show sets theyaxis to a logarithmic scale. Figure 5.2 (right) shows the result. It is not exactly straight, which indicates that the exponential distribution is not a perfect model for this data. Most likely the underlying assumption—that a birth is equally likely at any time of day—is not exactly true.",
+        "context_ids": [
+          "b-thinkstats2-c3-c5-p59-002",
+          "b-thinkstats2-c3-c5-p59-001",
+          "b-thinkstats2-c3-c5-p60-001"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "query_id": "q13",
+    "elapsed_ms": 8981.53300001286,
+    "model_usage": [
+      {
+        "prompt_tokens": 282,
+        "prompt_tokens_details": {
+          "cached_tokens": 250
+        },
+        "completion_tokens": 28,
+        "total_tokens": 310
+      },
+      {
+        "prompt_tokens": 921,
+        "prompt_tokens_details": {
+          "cached_tokens": 275
+        },
+        "completion_tokens": 47,
+        "total_tokens": 968
+      }
+    ]
+  },
+  {
+    "status": "answered",
+    "answer": "[b-thinkstats2-c3-c5-p59-002]",
+    "citations": [
+      "b-thinkstats2-c3-c5-p59-002"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "tool": "dense_pgvector_strategy_b",
+        "query": "slope exponential distribution CCDF",
+        "filter": null,
+        "results": [
+          {
+            "id": "b-thinkstats2-c3-c5-p59-001",
+            "text": "5.1. The exponential distribution 59 0 20 40 60 80 100 120 140 160 minutes 0.0 0.2 0.4 0.6 0.8 1.0CDF 0 20 40 60 80 100 120 140 160 minutes 10-2 10-1 100 CCDF Figure 5.2: CDF of interarrival times (left) and CCDF on a log-y scale (right). bution of these interarrival times. Figure 5.2 (left) shows the CDF. It seems to have the general shape of an exponential distribution, but how can we tell? One way is to plot thecomplementary CDF, which is 1−CDF(x), on a log-y scale.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 59,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.8953430243713232,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p59-002",
+            "text": "For data from an exponential distribution, the result is a straight line. Let’s see why that works. If you plot the complementary CDF (CCDF) of a dataset that you think is exponential, you expect to see a function like: y≈e −λx Taking the log of both sides yields: logy≈ −λx So on a log-y scale the CCDF is a straight line with slope−λ. Here’s how we can generate a plot like that: thinkplot.Cdf(cdf, complement=True) thinkplot.Show(xlabel='minutes', ylabel='CCDF', yscale='log')",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 59,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.8918701007598474,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p67-005",
+            "text": "If you plot the CCDF of a sample from a Pareto distribution on a linear scale, you expect to see a function like: y≈ \u0012 x xm \u0013−α Taking the log of both sides yields: logy≈ −α(logx−logx m)",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 67,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.8820251296743689,
+            "strategy": "dense_pgvector_strategy_b"
+          }
+        ],
+        "context": "[b-thinkstats2-c3-c5-p59-001 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 59]\n5.1. The exponential distribution 59 0 20 40 60 80 100 120 140 160 minutes 0.0 0.2 0.4 0.6 0.8 1.0CDF 0 20 40 60 80 100 120 140 160 minutes 10-2 10-1 100 CCDF Figure 5.2: CDF of interarrival times (left) and CCDF on a log-y scale (right). bution of these interarrival times. Figure 5.2 (left) shows the CDF. It seems to have the general shape of an exponential distribution, but how can we tell? One way is to plot thecomplementary CDF, which is 1−CDF(x), on a log-y scale.\n\n[b-thinkstats2-c3-c5-p59-002 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 59]\nFor data from an exponential distribution, the result is a straight line. Let’s see why that works. If you plot the complementary CDF (CCDF) of a dataset that you think is exponential, you expect to see a function like: y≈e −λx Taking the log of both sides yields: logy≈ −λx So on a log-y scale the CCDF is a straight line with slope−λ. Here’s how we can generate a plot like that: thinkplot.Cdf(cdf, complement=True) thinkplot.Show(xlabel='minutes', ylabel='CCDF', yscale='log')\n\n[b-thinkstats2-c3-c5-p67-005 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 67]\nIf you plot the CCDF of a sample from a Pareto distribution on a linear scale, you expect to see a function like: y≈ \u0012 x xm \u0013−α Taking the log of both sides yields: logy≈ −α(logx−logx m)",
+        "context_ids": [
+          "b-thinkstats2-c3-c5-p59-001",
+          "b-thinkstats2-c3-c5-p59-002",
+          "b-thinkstats2-c3-c5-p67-005"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "query_id": "q14",
+    "elapsed_ms": 8558.480000006966,
+    "model_usage": [
+      {
+        "prompt_tokens": 281,
+        "prompt_tokens_details": {
+          "cached_tokens": 251
+        },
+        "completion_tokens": 14,
+        "total_tokens": 295
+      },
+      {
+        "prompt_tokens": 871,
+        "prompt_tokens_details": {
+          "cached_tokens": 274
+        },
+        "completion_tokens": 47,
+        "total_tokens": 918
+      }
+    ]
+  },
+  {
+    "status": "answered",
+    "answer": "[b-thinkstats2-c3-c5-p65-003]",
+    "citations": [
+      "b-thinkstats2-c3-c5-p65-003"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "tool": "dense_pgvector_strategy_b",
+        "query": "How to use a normal probability plot to check lognormal data",
+        "filter": null,
+        "results": [
+          {
+            "id": "b-thinkstats2-c3-c5-p65-003",
+            "text": "But remember that these parameters arenotthe mean and standard deviation; the mean of a lognormal distribution is exp(μ+σ 2/2) and the standard deviation is ugly (seehttp://wikipedia.org/wiki/Log-normal_ distribution). If a sample is approximately lognormal and you plot its CDF on a log-x scale, it will have the characteristic shape of a normal distribution. To test how well the sample fits a lognormal model, you can make a normal probability plot using the log of the values in the sample.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 65,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.8967427015304565,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p67-001",
+            "text": "5.5. The Pareto distribution 67 with a normal model. Figure 5.7 (right) shows the same distribution on a log scale with a lognormal model. The lognormal model is a better fit, but this representation of the data does not make the difference particularly dramatic. Figure 5.8 shows normal probability plots for adult weights,w, and for their logarithms, log 10 w. Now it is apparent that the data deviate substantially from the normal model.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 67,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.8871389031410217,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p62-002",
+            "text": "5.3 Normal probability plot For the exponential distribution, and a few others, there are simple transformations we can use to test whether an analytic distribution is a good model for a dataset. For the normal distribution there is no such transformation, but there is an alternative called anormal probability plot. There are two ways to generate a normal probability plot: the hard way and the easy way.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 62,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.8823953866958618,
+            "strategy": "dense_pgvector_strategy_b"
+          }
+        ],
+        "context": "[b-thinkstats2-c3-c5-p65-003 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 65]\nBut remember that these parameters arenotthe mean and standard deviation; the mean of a lognormal distribution is exp(μ+σ 2/2) and the standard deviation is ugly (seehttp://wikipedia.org/wiki/Log-normal_ distribution). If a sample is approximately lognormal and you plot its CDF on a log-x scale, it will have the characteristic shape of a normal distribution. To test how well the sample fits a lognormal model, you can make a normal probability plot using the log of the values in the sample.\n\n[b-thinkstats2-c3-c5-p67-001 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 67]\n5.5. The Pareto distribution 67 with a normal model. Figure 5.7 (right) shows the same distribution on a log scale with a lognormal model. The lognormal model is a better fit, but this representation of the data does not make the difference particularly dramatic. Figure 5.8 shows normal probability plots for adult weights,w, and for their logarithms, log 10 w. Now it is apparent that the data deviate substantially from the normal model.\n\n[b-thinkstats2-c3-c5-p62-002 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 62]\n5.3 Normal probability plot For the exponential distribution, and a few others, there are simple transformations we can use to test whether an analytic distribution is a good model for a dataset. For the normal distribution there is no such transformation, but there is an alternative called anormal probability plot. There are two ways to generate a normal probability plot: the hard way and the easy way.",
+        "context_ids": [
+          "b-thinkstats2-c3-c5-p65-003",
+          "b-thinkstats2-c3-c5-p67-001",
+          "b-thinkstats2-c3-c5-p62-002"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "query_id": "q15",
+    "elapsed_ms": 8127.823400020134,
+    "model_usage": [
+      {
+        "prompt_tokens": 282,
+        "prompt_tokens_details": {
+          "cached_tokens": 251
+        },
+        "completion_tokens": 21,
+        "total_tokens": 303
+      },
+      {
+        "prompt_tokens": 773,
+        "prompt_tokens_details": {
+          "cached_tokens": 275
+        },
+        "completion_tokens": 47,
+        "total_tokens": 820
+      }
+    ]
+  },
+  {
+    "status": "abstain",
+    "answer": "Không đủ bằng chứng để trả lời.",
+    "citations": [],
+    "events": [
+      {
+        "event": "search",
+        "tool": "dense_pgvector_strategy_b",
+        "query": "current population of Hanoi",
+        "filter": null,
+        "results": [
+          {
+            "id": "b-thinkstats2-c3-c5-p68-002",
+            "text": "I downloaded their data fromhttp://www.census.gov/popest/data/ cities/totals/2012/SUB-EST2012-3.html; it is in the repository for this book in a file namedPEP_2012_PEPANNRES_with_ann.csv. The repository also containspopulations.py, which reads the file and plots the distribution of populations. Figure 5.10 shows the CCDF of populations on a log-log scale. The largest 1% of cities and towns, below 10 −2, fall along a straight line.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 68,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.7584202289581299,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p73-002",
+            "text": "The Current Population Survey (CPS) is a joint effort of the Bureau of Labor Statistics and the Census Bureau to study income and related variables. Data collected in 2013 is available fromhttp://www.census.gov/hhes/www/ cpstables/032013/hhinc/toc.htm. I downloadedhinc06.xls, which is an Excel spreadsheet with information about household income, and converted it tohinc06.csv, a CSV file you will find in the repository for this book. You will also findhinc.py, which reads this file.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 73,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.7454854249954224,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p58-003",
+            "text": "On December 18, 1997, 44 babies were born in a hospital in Brisbane, Australia. 1 The time of birth for all 44 babies was reported in the local paper; the complete dataset is in a file calledbabyboom.dat, in theThinkStats2repository. df = ReadBabyBoom() diffs = df.minutes.diff() cdf = thinkstats2.Cdf(diffs, label='actual') thinkplot.Cdf(cdf) thinkplot.Show(xlabel='minutes', ylabel='CDF') ReadBabyBoomreads the data file and returns a DataFrame with columns time,sex,weight_g, andminutes, whereminu",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 58,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.7420359407641937,
+            "strategy": "dense_pgvector_strategy_b"
+          }
+        ],
+        "context": "[b-thinkstats2-c3-c5-p68-002 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 68]\nI downloaded their data fromhttp://www.census.gov/popest/data/ cities/totals/2012/SUB-EST2012-3.html; it is in the repository for this book in a file namedPEP_2012_PEPANNRES_with_ann.csv. The repository also containspopulations.py, which reads the file and plots the distribution of populations. Figure 5.10 shows the CCDF of populations on a log-log scale. The largest 1% of cities and towns, below 10 −2, fall along a straight line.\n\n[b-thinkstats2-c3-c5-p73-002 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 73]\nThe Current Population Survey (CPS) is a joint effort of the Bureau of Labor Statistics and the Census Bureau to study income and related variables. Data collected in 2013 is available fromhttp://www.census.gov/hhes/www/ cpstables/032013/hhinc/toc.htm. I downloadedhinc06.xls, which is an Excel spreadsheet with information about household income, and converted it tohinc06.csv, a CSV file you will find in the repository for this book. You will also findhinc.py, which reads this file.\n\n[b-thinkstats2-c3-c5-p58-003 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 58]\nOn December 18, 1997, 44 babies were born in a hospital in Brisbane, Australia. 1 The time of birth for all 44 babies was reported in the local paper; the complete dataset is in a file calledbabyboom.dat, in theThinkStats2repository. df = ReadBabyBoom() diffs = df.minutes.diff() cdf = thinkstats2.Cdf(diffs, label='actual') thinkplot.Cdf(cdf) thinkplot.Show(xlabel='minutes', ylabel='CDF') ReadBabyBoomreads the data file and returns a DataFrame with columns time,sex,weight_g, andminutes, whereminu",
+        "context_ids": [
+          "b-thinkstats2-c3-c5-p68-002",
+          "b-thinkstats2-c3-c5-p73-002",
+          "b-thinkstats2-c3-c5-p58-003"
+        ]
+      },
+      {
+        "event": "model_abstain",
+        "reason": "insufficient information about Hanoi population"
+      }
+    ],
+    "query_id": "q21",
+    "elapsed_ms": 7805.242400034331,
+    "model_usage": [
+      {
+        "prompt_tokens": 272,
+        "prompt_tokens_details": {
+          "cached_tokens": 251
+        },
+        "completion_tokens": 14,
+        "total_tokens": 286
+      },
+      {
+        "prompt_tokens": 850,
+        "prompt_tokens_details": {
+          "cached_tokens": 265
+        },
+        "completion_tokens": 18,
+        "total_tokens": 868
+      }
+    ]
+  },
+  {
+    "status": "abstain",
+    "answer": "Không đủ bằng chứng để trả lời.",
+    "citations": [],
+    "events": [
+      {
+        "event": "search",
+        "tool": "dense_pgvector_strategy_b",
+        "query": "Which laptop brand does the author recommend for running the examples?",
+        "filter": null,
+        "results": [
+          {
+            "id": "b-thinkstats2-c3-c5-p66-003",
+            "text": "The repository for this book containsCDBRFS08.ASC.gz, a fixed-width ASCII file that contains data from the BRFSS, andbrfss.py, which reads the file and analyzes the data. Figure 5.7 (left) shows the distribution of adult weights on a linear scale 2I was tipped off to this possibility by a comment (without citation) athttp: //mathworld.wolfram.com/LogNormalDistribution.html.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 66,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.7822582255447983,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p72-005",
+            "text": "Exercise 5.5In the repository for this book, you’ll find a set of data files calledmystery0.dat,mystery1.dat, and so on. Each contains a sequence of random numbers generated from an analytic distribution. You will also findtest_models.py, a script that reads data from a file and plots the CDF under a variety of transforms. You can run it like this:",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 72,
+            "metadata": {
+              "chapter": 5
+            },
+            "score": 0.7775754134222139,
+            "strategy": "dense_pgvector_strategy_b"
+          },
+          {
+            "id": "b-thinkstats2-c3-c5-p43-001",
+            "text": "3.7. Glossary 43 Write a function calledObservedPmfthat takes a Pmf representing the actual distribution of runners’ speeds, and the speed of a running observer, and returns a new Pmf representing the distribution of runners’ speeds as seen by the observer. To test your function, you can userelay.py, which reads the results from the James Joyce Ramble 10K in Dedham MA and converts the pace of each runner to mph.",
+            "source_id": "thinkstats2-c3-c5",
+            "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+            "page": 43,
+            "metadata": {
+              "chapter": 3
+            },
+            "score": 0.7752761378719738,
+            "strategy": "dense_pgvector_strategy_b"
+          }
+        ],
+        "context": "[b-thinkstats2-c3-c5-p66-003 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 66]\nThe repository for this book containsCDBRFS08.ASC.gz, a fixed-width ASCII file that contains data from the BRFSS, andbrfss.py, which reads the file and analyzes the data. Figure 5.7 (left) shows the distribution of adult weights on a linear scale 2I was tipped off to this possibility by a comment (without citation) athttp: //mathworld.wolfram.com/LogNormalDistribution.html.\n\n[b-thinkstats2-c3-c5-p72-005 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 72]\nExercise 5.5In the repository for this book, you’ll find a set of data files calledmystery0.dat,mystery1.dat, and so on. Each contains a sequence of random numbers generated from an analytic distribution. You will also findtest_models.py, a script that reads data from a file and plots the CDF under a variety of transforms. You can run it like this:\n\n[b-thinkstats2-c3-c5-p43-001 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | page 43]\n3.7. Glossary 43 Write a function calledObservedPmfthat takes a Pmf representing the actual distribution of runners’ speeds, and the speed of a running observer, and returns a new Pmf representing the distribution of runners’ speeds as seen by the observer. To test your function, you can userelay.py, which reads the results from the James Joyce Ramble 10K in Dedham MA and converts the pace of each runner to mph.",
+        "context_ids": [
+          "b-thinkstats2-c3-c5-p66-003",
+          "b-thinkstats2-c3-c5-p72-005",
+          "b-thinkstats2-c3-c5-p43-001"
+        ]
+      },
+      {
+        "event": "model_abstain",
+        "reason": "no relevant context found for laptop brand recommendation"
+      }
+    ],
+    "query_id": "q22",
+    "elapsed_ms": 7663.599199964665,
+    "model_usage": [
+      {
+        "prompt_tokens": 275,
+        "prompt_tokens_details": {
+          "cached_tokens": 250
+        },
+        "completion_tokens": 21,
+        "total_tokens": 296
+      },
+      {
+        "prompt_tokens": 749,
+        "prompt_tokens_details": {
+          "cached_tokens": 268
+        },
+        "completion_tokens": 19,
+        "total_tokens": 768
+      }
+    ]
+  }
+]
